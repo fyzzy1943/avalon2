@@ -6,14 +6,13 @@
 
   <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   {{--<link rel="stylesheet" href="/editor/style.css" />--}}
-  <link rel="stylesheet" href="/editor/editormd.css" />
+  <link rel="stylesheet" href="/editor/css/editormd.min.css" />
   <style>
 
   </style>
 </head>
 <body>
 <div class="container">
-  {{-- 123 --}}
 
   <div class="form-group">
     <span>cover:(764 * 270)</span>
@@ -113,7 +112,7 @@
 
         $('#cover').on('change', function (e) {
             var formData = new FormData();
-            var $token = $('input', {'type': 'hidden', 'name': '_token', 'value': '{{csrf_token()}}'});
+
             formData.append('_token', '{{ csrf_token() }}');
             formData.append('cover', $('#cover')[0].files[0]);
 
