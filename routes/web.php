@@ -11,6 +11,42 @@
 |
 */
 
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
 Route::get('/', function () {
-    return view('welcome');
+//    return $app->version();
+    return redirect('article');
 });
+
+Route::get('avalon', function() {
+    return redirect('avalon/article');
+});
+
+Route::get('login', 'Avalon\LoginController@showLoginForm');
+Route::post('login', 'Avalon\LoginController@login');
+
+Route::group([
+    'prefix' => 'avalon',
+//    'middleware' => 'auth',
+    'namespace' => 'Avalon'
+], function () {
+
+    // Article
+    Route::get('article', 'ArticleController@index');
+    Route::get('article/create', 'ArticleController@create');
+    Route::post('article', 'ArticleController@store');
+    Route::get('article/{id}/edit', 'ArticleController@edit');
+    Route::put('article', 'ArticleController@update');
+    Route::delete('article/{id}', 'ArticleController@delete');
+
+
+    // Upload
+    Route::post('upload/img/{name}', 'UploadController@img');
+});
+
+
+
+Route::get('article', 'IndexController@index');
+Route::get('article/{id}', 'IndexController@show');
