@@ -32,6 +32,9 @@ Route::get('login', 'Avalon\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Avalon\LoginController@login');
 Route::post('logout', 'Avalon\LoginController@logout')->name('logout');
 
+Route::get('register', 'Avalon\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Avalon\RegisterController@register');
+
 Route::group([
     'prefix' => 'avalon',
 //    'middleware' => 'auth',
