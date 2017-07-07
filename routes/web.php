@@ -24,8 +24,13 @@ Route::get('avalon', function() {
     return redirect('avalon/article');
 });
 
-Route::get('login', 'Avalon\LoginController@showLoginForm');
+//$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+//$this->post('login', 'Auth\LoginController@login');
+//$this->post('logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('login', 'Avalon\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Avalon\LoginController@login');
+Route::post('logout', 'Avalon\LoginController@logout')->name('logout');
 
 Route::group([
     'prefix' => 'avalon',
@@ -50,3 +55,7 @@ Route::group([
 
 Route::get('article', 'IndexController@index');
 Route::get('article/{id}', 'IndexController@show');
+
+//Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
