@@ -8,8 +8,8 @@
     <table class="table table-striped">
       <tr>
         <th>标题</th>
-        <th>标题</th>
-        <th>标题</th>
+        <th>创建时间</th>
+        <th>操作</th>
       </tr>
       @forelse($articles as $article)
         <tr>
@@ -23,7 +23,9 @@
           </td>
         </tr>
       @empty
-        <p>暂时没有</p>
+        <tr>
+          <td colspan="3">暂无数据</td>
+        </tr>
       @endforelse
     </table>
   </div>

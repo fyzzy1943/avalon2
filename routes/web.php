@@ -37,7 +37,7 @@ Route::post('register', 'Avalon\RegisterController@register');
 
 Route::group([
     'prefix' => 'avalon',
-//    'middleware' => 'auth',
+    'middleware' => 'auth',
     'namespace' => 'Avalon'
 ], function () {
 
