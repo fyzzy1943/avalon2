@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Avalon;
 
+use App\Category;
+use App\Http\Requests\StoreCategoryRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +16,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::orderBy('created_at', 'desc')->get();
+
+        return view('avalon.category.index', compact('categories'));
     }
 
     /**
@@ -24,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('avalon.category.create');
     }
 
     /**
@@ -33,9 +37,11 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
-        //
+        $category = Category::create($request->all());
+//        dd($category);
+        return redirect()->action('Avalon\CategoryController@index');
     }
 
     /**

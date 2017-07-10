@@ -42,12 +42,15 @@ Route::group([
 ], function () {
 
     // Article
-    Route::get('article', 'ArticleController@index');
+    Route::get('article', 'ArticleController@index')->name('article');
     Route::get('article/create', 'ArticleController@create');
     Route::post('article', 'ArticleController@store');
     Route::get('article/{id}/edit', 'ArticleController@edit');
     Route::put('article', 'ArticleController@update');
     Route::delete('article/{id}', 'ArticleController@delete');
+
+    // Category
+    Route::resource('category', 'CategoryController');
 
 
     // Upload
