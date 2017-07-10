@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Avalon;
 use App\Article;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use App\Http\Controllers\Controller;
 
@@ -23,7 +24,7 @@ class ArticleController extends Controller
     public function index()
     {
 
-        $articles = Article::all();
+        $articles = Article::orderBy('created_at', 'desc')->get();
 
 		return view('avalon.article.index')->with('articles', $articles);
     }
@@ -42,6 +43,7 @@ class ArticleController extends Controller
         $article->status = $request->input('status');
         $article->cover = $request->input('cover');
         $article->abstract = $request->input('abstract');
+        $article->uid = Auth::user()->id;
 
         $article->save();
 
