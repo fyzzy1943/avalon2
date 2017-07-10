@@ -8,12 +8,14 @@
     <table class="table table-striped">
       <tr>
         <th>标题</th>
+        <th>分类</th>
         <th>创建时间</th>
         <th>操作</th>
       </tr>
       @forelse($articles as $article)
         <tr>
           <td>{{ $article->title }}</td>
+          <td>{{ $article->category->name }}</td>
           <td>{{ $article->created_at }}</td>
           <td>
             <div class="btn-group btn-group-xs" role="group" aria-label="...">

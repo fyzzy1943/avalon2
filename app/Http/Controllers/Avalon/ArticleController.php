@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Avalon;
 
 use App\Article;
+use App\Category;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,7 +32,9 @@ class ArticleController extends Controller
 
     public function create()
     {
-    	return view('avalon.article.create');
+        $categories = Category::all();
+
+    	return view('avalon.article.create', compact('categories'));
     }
 
     public function store(Request $request)
