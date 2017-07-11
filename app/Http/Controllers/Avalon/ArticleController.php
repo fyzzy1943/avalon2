@@ -47,6 +47,7 @@ class ArticleController extends Controller
         $article->cover = $request->input('cover');
         $article->abstract = $request->input('abstract');
         $article->uid = Auth::user()->id;
+        $article->cid = $request->input('category');
 
         $article->save();
 

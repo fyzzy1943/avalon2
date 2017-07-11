@@ -23,27 +23,43 @@
 
   <hr>
   <form action="/avalon/article" method="post">
-    <div class="form-group">
-      <label for="title">Title</label>
-      <input type="text" class="form-control" id="title" name="title" placeholder="标题">
-    </div>
-    <div class="form-group">
-      <label for="abstract">Abstract</label>
-      <textarea class="form-control" name="abstract" rows="5" placeholder="摘要"></textarea>
-    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="标题">
+        </div>
+        <div class="form-group">
+          <label for="abstract">Abstract</label>
+          <textarea class="form-control" id="abstract" name="abstract" rows="5" placeholder="摘要"></textarea>
+        </div>
+      </div>
 
-    <div class="radio-inline">
-      <label>
-        <input type="radio" name="status" id="status" value="1">
-        发布
-      </label>
+      <div class="col-md-5">
+        <div class="radio-inline">
+          <label>
+            <input type="radio" name="status" id="status" value="1">
+            发布
+          </label>
+        </div>
+        <div class="radio-inline">
+          <label>
+            <input type="radio" name="status" id="status" value="0" checked>
+            草稿
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select class="form-control" id="category" name="category">
+            @foreach($categories as $category)
+              <option value="{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
+          </select>
+        </div>
+      </div>
     </div>
-    <div class="radio-inline">
-      <label>
-        <input type="radio" name="status" id="status" value="0" checked>
-        草稿
-      </label>
-    </div>
+    <div class="clearfix"></div>
+
     <div class="form-group">
       <label for="editor">Text</label>
       <div id="editor"></div>

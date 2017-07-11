@@ -2,10 +2,6 @@
 
 @section('style')
   <style>
-    /*body{*/
-      /*background-color: #f5f5d5;*/
-      /*padding: 30px 0;*/
-    /*}*/
     .left{
       width: 800px;
       height: 100%;
@@ -139,7 +135,7 @@
                 {{ $article->created_at->format('m-d') }}
               </div>
               <h2><a href="/article/{{ $article->id }}">{{ $article->title }}</a></h2>
-              <span>来源：原创   分类：交互设计, 网页设计</span>
+              <span>来源：原创   分类：{{ $article->category->name }}</span>
             </div>
             <div class="cover">
               <img src="{{ $article->cover }}" title="{{ $article->title }}" alt="{{ $article->title }}">
@@ -152,11 +148,6 @@
         @endforeach
     </div>
     <div class="right">
-        <ul style="margin: 0;padding: 0;border: 1px solid navy">
-          @foreach($articles as $article)
-            <li><a href="/article/{{ $article->id }}">{{ $article->title }}</a></li>
-          @endforeach
-        </ul>
     </div>
   </div>
 @endsection
