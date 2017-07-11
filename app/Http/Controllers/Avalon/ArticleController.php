@@ -51,32 +51,35 @@ class ArticleController extends Controller
 
         $article->save();
 
-		return redirect('avalon/article');
+		return redirect()->route('article');
     }
 
     public function edit($id)
     {
-//        dd($article);
+        $categories = Category::all();
+
         $article = Article::where('id', $id)->first();
-        return view('avalon.article.edit')->with('article', $article);
+        return view('avalon.article.edit')->with('article', $article)->with('categories', $categories);
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-		$id = $request->input('id');
-
-		$article = Article::find($id);
+		$article = Article::findOrFail($id);
 
 	    $article->title = $request->input('title');
 	    $article->doc_md = $request->input('editor-markdown-doc');
 	    $article->doc_html = $request->input('editor-html-code');
+        $article->status = $request->input('status');
+        $article->cover = $request->input('cover');
+        $article->abstract = $request->input('abstract');
+        $article->cid = $request->input('category');
 
 	    $article->save();
 
-	    return redirect('avalon/article');
+	    return redirect()->route('article');
     }
 
-    public function delete(Request $request)
+    public function destroy(Request $request)
     {
 		$article = Article::find($request->input('id'));
 

@@ -46,12 +46,13 @@ Route::group([
     Route::get('article/create', 'ArticleController@create');
     Route::post('article', 'ArticleController@store');
     Route::get('article/{id}/edit', 'ArticleController@edit');
-    Route::put('article', 'ArticleController@update');
-    Route::delete('article/{id}', 'ArticleController@delete');
+    Route::put('article/{id}', 'ArticleController@update');
+    Route::delete('article/{id}', 'ArticleController@destroy');
 
     // Category
-    Route::resource('category', 'CategoryController');
-
+    Route::resource('category', 'CategoryController', [
+        'except' => ['show', 'destroy'],
+    ]);
 
     // Upload
     Route::post('upload/img/{name}', 'UploadController@img');

@@ -135,7 +135,7 @@
                 {{ $article->created_at->format('m-d') }}
               </div>
               <h2><a href="/article/{{ $article->id }}">{{ $article->title }}</a></h2>
-              <span>来源：原创   分类：{{ $article->category->name }}</span>
+              <span>来源：原创 &nbsp;|  &nbsp;分类：{{ $article->category->name }}</span>
             </div>
             <div class="cover">
               <img src="{{ $article->cover }}" title="{{ $article->title }}" alt="{{ $article->title }}">
