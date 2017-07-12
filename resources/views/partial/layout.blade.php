@@ -16,38 +16,7 @@
     <![endif]-->
 
     <style>
-        html{
-            overflow-y: scroll;
-        }
-        *{
-            padding: 0;
-            margin: 0;
-        }
-        nav{
-            width: 100%;
-            background-color: #333;
-            color: #eee;
-            height: 32px;
-            line-height: 32px;
-        }
-        nav ul{
-            list-style-type: none;
-        }
-        nav li{
-            float: left;
-        }
-        nav li:not(:first-child){
-            margin-left: 100px;
 
-        }
-        header a{
-            color: #111;
-            text-decoration: none;
-        }
-        header a:hover{
-            text-decoration: none;
-
-        }
     </style>
 
     @include('partial.scrollbar')
@@ -57,21 +26,7 @@
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <a href="/"><h1>Avalon2</h1></a>
-    </div>
-</header>
 
-<nav>
-    <div class="container">
-        <ul>
-            <li>Index</li>
-            <li>Index</li>
-            <li>Index</li>
-        </ul>
-    </div>
-</nav>
 
 @yield('content')
 

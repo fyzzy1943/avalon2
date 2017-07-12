@@ -1,9 +1,9 @@
-@extends('partial.layout')
+@extends('layouts.avalon')
 
 @section('style')
   {{--<link rel="stylesheet" href="/editor/style.css" />--}}
   {{--<link rel="stylesheet" href="/editor/editormd.css" />--}}
-  <link rel="stylesheet" href="/editor/css/editormd.preview.css" />
+  <link rel="stylesheet" href="/editor/css/editormd.preview.min.css" />
     <style>
         /*#sidebar {*/
             /*width: 400px;*/
