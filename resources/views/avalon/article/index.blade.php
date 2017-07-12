@@ -7,6 +7,7 @@
     <hr>
     <table class="table table-striped">
       <tr>
+        <th>ID</th>
         <th>标题</th>
         <th>分类</th>
         <th>状态</th>
@@ -14,7 +15,8 @@
         <th>操作</th>
       </tr>
       @forelse($articles as $article)
-        <tr>
+        <tr id="tr_{{ $article->id }}">
+          <td>{{ $article->id }}</td>
           <td>{{ $article->title }}</td>
           <td>{{ $article->category->name }}</td>
           <td>{{ $article->status_d }}</td>
@@ -22,7 +24,7 @@
           <td>
             <div class="btn-group btn-group-xs" role="group" aria-label="...">
               <a href="/avalon/article/{{ $article->id }}/edit" class="btn btn-info btn-xs">编辑</a>
-              <button class="btn btn-danger btn-xs">删除</button>
+              <button class="btn btn-danger btn-xs" delete="{{ $article->id }}">删除</button>
             </div>
           </td>
         </tr>
@@ -34,4 +36,16 @@
     </table>
   </div>
 
+@endsection
+
+@section('script')
+  <script>
+    $(function($) {
+      $('[delete]').bind('click', function() {
+          $id = $(this).attr('delete');
+
+          $.post();
+      });
+    });
+  </script>
 @endsection
