@@ -25,7 +25,7 @@ class IndexController extends Controller
      *
      * @param Request $request
      */
-    public function index(Request $request)
+    public function index()
     {
         $articles = Article::where('status', '1')->orderBy('created_at', 'desc')->get();
 
