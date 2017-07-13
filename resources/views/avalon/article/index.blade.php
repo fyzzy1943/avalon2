@@ -41,10 +41,16 @@
 @section('script')
   <script>
     $(function($) {
-      $('[delete]').bind('click', function() {
+      $('button[delete]').bind('click', function() {
           $id = $(this).attr('delete');
 
-          $.post();
+          $.post('{{ url('avalon/article') }}' + '/' + $id, {
+              _method : 'DELETE',
+              _token  : $('meta[name="csrf-token"]').attr('content')
+          }, function (data, status) {
+//              alert(data);
+//              alert(status);
+          }, 'json');
       });
     });
   </script>

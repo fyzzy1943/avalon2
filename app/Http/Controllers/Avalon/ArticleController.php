@@ -79,14 +79,14 @@ class ArticleController extends Controller
 	    return redirect()->route('article');
     }
 
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-		$article = Article::find($request->input('id'));
+		$article = Article::findOrFail($id);
 
-		if ($article->trashed()) {
-			return redirect('avalon/article');
-		}
+		$result = $article->delete();
 
-	    return redirect('avalon/article');
+		return response()->json($result);
+
+//        return redirect('avalon/article');
     }
 }

@@ -11,9 +11,6 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 Route::get('/', function () {
 //    return $app->version();
@@ -24,16 +21,12 @@ Route::get('avalon', function() {
     return redirect('avalon/article');
 });
 
-//$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-//$this->post('login', 'Auth\LoginController@login');
-//$this->post('logout', 'Auth\LoginController@logout')->name('logout');
-
 Route::get('login', 'Avalon\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Avalon\LoginController@login');
 Route::post('logout', 'Avalon\LoginController@logout')->name('logout');
 
-Route::get('register', 'Avalon\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'Avalon\RegisterController@register');
+//Route::get('register', 'Avalon\RegisterController@showRegistrationForm')->name('register');
+//Route::post('register', 'Avalon\RegisterController@register');
 
 Route::group([
     'prefix' => 'avalon',
@@ -51,7 +44,7 @@ Route::group([
 
     // Category
     Route::resource('category', 'CategoryController', [
-        'except' => ['show', 'destroy'],
+        'except' => ['show'],
     ]);
 
     // Upload
