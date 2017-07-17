@@ -83,10 +83,31 @@ class ArticleController extends Controller
     {
 		$article = Article::findOrFail($id);
 
+		$article->status = 2;
+		$article->save();
+
 		$result = $article->delete();
 
-		return response()->json($result);
+		if ($result) {
+            return response()->json($id);
+        }
 
-//        return redirect('avalon/article');
+		return response()->json(false);
+    }
+
+    public function recycle()
+    {
+        $articles = Article::onlyTrashed()->orderBy('created_at', 'desc')->get();
+
+        return view('avalon.article.recycle')->with('articles', $articles);
+    }
+
+    public function restore($id)
+    {
+        $article = Article::onlyTrashed()->findOrFail($id);
+
+        $article->restore();
+
+        return redirect()->route('article');
     }
 }

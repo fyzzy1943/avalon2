@@ -1,4 +1,4 @@
-@extends('partial.layout')
+@extends('layouts.avalon')
 
 @section('content')
   <div class="container">

@@ -42,6 +42,9 @@ Route::group([
     Route::put('article/{id}', 'ArticleController@update');
     Route::delete('article/{id}', 'ArticleController@destroy');
 
+    Route::get('article/recycle', 'ArticleController@recycle');
+    Route::get('article/restore/{id}', 'ArticleController@restore');
+
     // Category
     Route::resource('category', 'CategoryController', [
         'except' => ['show'],
