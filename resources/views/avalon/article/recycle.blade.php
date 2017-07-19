@@ -21,8 +21,8 @@
           <td>{{ $article->created_at }}</td>
           <td>
             <div class="btn-group btn-group-xs" role="group" aria-label="...">
-              <a href="/avalon/article/{{ $article->id }}/edit" class="btn btn-info btn-xs">编辑</a>
-              <button class="btn btn-danger btn-xs" delete="{{ $article->id }}">删除</button>
+              <a href="/avalon/article/restore/{{ $article->id }}" class="btn btn-primary btn-xs">还原</a>
+              <button class="btn btn-danger btn-xs" delete="{{ $article->id }}">彻底删除</button>
             </div>
           </td>
         </tr>
@@ -46,11 +46,8 @@
               _method : 'DELETE',
               _token  : $('meta[name="csrf-token"]').attr('content')
           }, function (data, status) {
-              if (data != false) {
-                  $('#tr_'+data).remove();
-              } else {
-                  alert('删除失败');
-              }
+//              alert(data);
+//              alert(status);
           }, 'json');
       });
     });

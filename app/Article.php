@@ -26,6 +26,9 @@ class Article extends Model
             case 2:
                 $value = '隐藏';
                 break;
+            default:
+                $value = '未知';
+                break;
         }
 
         return $value;
