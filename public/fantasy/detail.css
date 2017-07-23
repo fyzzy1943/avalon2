@@ -1,0 +1,8 @@
+.loading {
+  position: relative; }
+.loading > img {
+  position: absolute;
+  left: 30%;
+  top: 30px; }
+
+/*# sourceMappingURL=detail.css.map */

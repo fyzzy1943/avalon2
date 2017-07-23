@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,QAAQ;EACN,QAAQ,EAAE,QAAQ;AAElB,cAAI;EACF,QAAQ,EAAE,QAAQ;EAClB,IAAI,EAAE,GAAG;EACT,GAAG,EAAE,IAAI",
+"sources": ["../../resources/assets/sass/detail.scss"],
+"names": [],
+"file": "detail.css"
+}
