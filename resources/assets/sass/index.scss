@@ -1,7 +1,14 @@
+@charset "UTF-8";
+
+@import "avalon/mixin";
+
+$left_width: 800px;
+$right_width: 1170px - $left_width;
+
 .left{
-  width: 800px;
+  width: $left_width;
   height: 100%;
-  display: block;
+  float: left;
 }
 section{
   display: block;
@@ -103,6 +110,21 @@ section .go > a{
 section .go > a:hover{
   text-decoration: none;
 }
+
+
+
 .right{
-  display: block;
+  //@include test-border(red);
+  float: left;
+  width: $right_width;
+
+  padding: 30px 17px 0;
+
+  >.category{
+
+    >ul{
+      list-style-type: none;
+    }
+  }
+
 }

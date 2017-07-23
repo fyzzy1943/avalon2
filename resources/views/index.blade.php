@@ -28,6 +28,14 @@
         @endforeach
     </div>
     <div class="right">
+      <div class="category">
+        <h3>分类列表</h3>
+        <ul>
+          <li>...</li>
+          <li>...</li>
+          <li>...</li>
+        </ul>
+      </div>
     </div>
   </div>
 @endsection

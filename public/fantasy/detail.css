@@ -2,7 +2,50 @@
   position: relative; }
 .loading > img {
   position: absolute;
-  left: 30%;
-  top: 30px; }
+  left: 37%;
+  top: 37px; }
+
+article {
+  width: 800px;
+  border: 1px #ccc solid;
+  float: left; }
+article > h1 {
+  display: inline-block;
+  margin: 30px 0 0 17px;
+  font-size: 24px; }
+article > hr {
+  width: 760px;
+  margin: 30px 0 0 20px;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-top: 1px #ddd solid; }
+
+#sidebar {
+  width: 370px;
+  height: 100%;
+  position: fixed;
+  margin-left: 800px;
+  overflow: hidden;
+  top: 110px;
+  z-index: 9; }
+#sidebar:hover {
+  overflow: auto; }
+#sidebar h1 {
+  font-size: 16px;
+  padding: 17px 7px 0; }
+#sidebar > hr {
+  width: 70%;
+  margin: 17px 0 0 0;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-top: 1px #ddd solid; }
+
+#custom-toc-container {
+  padding-left: 0; }
+
+footer {
+  clear: both; }
 
 /*# sourceMappingURL=detail.css.map */

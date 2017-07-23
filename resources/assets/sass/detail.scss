@@ -1,9 +1,75 @@
+@charset "UTF-8";
+
+@import "avalon/mixin";
+
 .loading{
   position: relative;
 
   >img{
     position: absolute;
-    left: 30%;
-    top: 30px;
+    left: 37%;
+    top: 37px;
   }
+}
+article{
+  width: 800px;
+  border: 1px #ccc solid;
+  float: left;
+
+  >h1{
+    //@include test-border(red);
+    display: inline-block;
+    margin: 30px 0 0 17px;
+    font-size: 24px;
+  }
+  >hr{
+    width: 760px;
+    margin: 30px 0 0 20px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: 1px #ddd solid;
+  }
+}
+
+#sidebar {
+  width: 370px;
+  height: 100%;
+  position: fixed;
+  margin-left: 800px;
+  overflow: hidden;
+  top: 110px;
+  //background: #fff;
+  //opacity: 0.2;
+  z-index: 9;
+  //padding: 18px;
+  //border: 1px solid #ddd;
+  //border-top: none;
+  //border-bottom: none;
+
+  &:hover{
+    overflow: auto;
+  }
+
+  h1{
+    font-size: 16px;
+    padding: 17px 7px 0;
+  }
+
+  >hr{
+    width: 70%;
+    margin: 17px 0 0 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: 1px #ddd solid;
+  }
+}
+
+#custom-toc-container {
+  padding-left: 0;
+}
+
+footer{
+  clear: both;
 }

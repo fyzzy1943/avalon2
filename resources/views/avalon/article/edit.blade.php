@@ -9,7 +9,7 @@
     <div class="form-group">
       <span>cover:(764 * 270)</span>
       <div id="cover_preview" style="width: 764px;height: 270px;">
-        <img src="{{ $article->cover }}">
+        <img src="{{ $article->cover }}" style="width: 100%;height: 100%;">
       </div>
       <input type="file" class="form-control" id="cover" placeholder="cover">
     </div>

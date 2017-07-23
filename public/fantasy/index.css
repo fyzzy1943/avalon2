@@ -1,7 +1,7 @@
 .left {
   width: 800px;
   height: 100%;
-  display: block; }
+  float: left; }
 
 section {
   display: block;
@@ -93,6 +93,10 @@ section .go > a:hover {
   text-decoration: none; }
 
 .right {
-  display: block; }
+  float: left;
+  width: 370px;
+  padding: 30px 17px 0; }
+.right > .category > ul {
+  list-style-type: none; }
 
 /*# sourceMappingURL=index.css.map */
