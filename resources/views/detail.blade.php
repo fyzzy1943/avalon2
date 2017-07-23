@@ -20,10 +20,10 @@
     </div>
 
     <article>
-      <h1>{{ $article->title }}</h1>
-      <hr>
+      {{--<h1><a name="{{ $article->title }}" class="reference-link"></a>{{ $article->title }}</h1>--}}
+      {{--<hr>--}}
       <div id="article">
-        <textarea title="article" style="display: none">{!! $article->doc_md !!}</textarea>
+        <textarea title="article" style="display: none">{!! $article->withTitle !!}</textarea>
       </div>
     </article>
 

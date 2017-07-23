@@ -33,4 +33,9 @@ class Article extends Model
 
         return $value;
     }
+
+    public function getWithTitleAttribute()
+    {
+    	return "# " . $this->title . "\n\n---\n\n" . $this->doc_md;
+    }
 }
