@@ -3,9 +3,6 @@
   height: 100%;
   display: block;
 }
-.left a:hover{
-  color: #23527c;
-}
 section{
   display: block;
   float: left;
@@ -51,14 +48,6 @@ section .title h2{
 
   /*border: 1px solid rebeccapurple;*/
   display: inline-block;
-}
-section .title h2 a{
-  color: #333;
-  text-decoration: none;
-}
-section .title h2 a:hover{
-  /*color: #333;*/
-  text-decoration: none;
 }
 section .title span{
   display: inline-block;

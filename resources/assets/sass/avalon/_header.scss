@@ -4,22 +4,35 @@ nav{
   color: #eee;
   height: 32px;
   line-height: 32px;
-}
-nav ul{
-  list-style-type: none;
-}
-nav li{
-  float: left;
-}
-nav li:not(:first-child){
-  margin-left: 100px;
 
-}
-header a{
-  color: #111;
-  text-decoration: none;
-}
-header a:hover{
-  text-decoration: none;
+  >.container{
+    padding: 0 18px;
 
+    ul{
+      list-style-type: none;
+
+      >li{
+        float: left;
+
+        &:not(:first-child){
+          margin-left: 100px;
+        }
+
+        >a{
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+header{
+  >.container{
+    padding: 0 18px;
+  }
+
+  h1{
+    margin: 20px 0 10px;
+    display: inline-block;
+  }
 }

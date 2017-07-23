@@ -1,13 +1,48 @@
 @charset "UTF-8";
 
-@import "avalon/header";
+@import "avalon/mixin";
+@import "avalon/base";
 
+@import "avalon/header";
 @import "avalon/scrollbar";
+
+$base-color: #333;
 
 *{
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 html{
   overflow-y: scroll;
+}
+body{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: transparent;
+}
+
+.container{
+  width: 1170px;
+  margin: 0 auto;
+}
+
+// headings
+@each $heading, $map in $headings-font-size-map{
+  #{$heading} {
+    font-size: map_get($map, font-size);
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+  }
+}
+
+a{
+  color: $base-color;
+  text-decoration: none;
+
+  &:hover{
+    color: #23527c;
+  }
 }

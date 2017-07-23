@@ -1,0 +1,13 @@
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+@mixin test-border($color) {
+  border: 1px $color solid;
+}
