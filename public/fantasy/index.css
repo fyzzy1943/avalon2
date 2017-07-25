@@ -1,29 +1,28 @@
-/* line 12, ../../resources/assets/sass/index.scss */
+/* line 13, ../../resources/assets/sass/index.scss */
 .left {
   width: 800px;
   height: 100%;
   float: left;
 }
-/* line 17, ../../resources/assets/sass/index.scss */
+/* line 18, ../../resources/assets/sass/index.scss */
 .left > section {
-  width: 800px;
+  width: 798px;
   margin: 30px 0 0;
   border: 1px #ccc solid;
   float: left;
 }
-/* line 24, ../../resources/assets/sass/index.scss */
+/* line 25, ../../resources/assets/sass/index.scss */
 .left > section:not(:first-child) {
   margin: 27px 0 0;
 }
-/* line 28, ../../resources/assets/sass/index.scss */
+/* line 29, ../../resources/assets/sass/index.scss */
 .left > section > .title {
   position: relative;
-  width: 707px -20px;
+  width: 707px -18px;
   overflow: hidden;
   padding: 7px 18px 7px 93px;
-  background-color: #c0a16b;
 }
-/* line 36, ../../resources/assets/sass/index.scss */
+/* line 37, ../../resources/assets/sass/index.scss */
 .left > section > .title > .date {
   position: absolute;
   top: -1px;
@@ -33,50 +32,57 @@
   color: #fff;
   font-size: 16px;
 }
-/* line 46, ../../resources/assets/sass/index.scss */
+/* line 47, ../../resources/assets/sass/index.scss */
 .left > section > .title > .date > small {
   display: block;
   font-size: 14px;
 }
-/* line 52, ../../resources/assets/sass/index.scss */
+/* line 53, ../../resources/assets/sass/index.scss */
 .left > section > .title > strong {
   font-size: 24px;
   font-weight: 500;
   color: #111;
 }
-/* line 58, ../../resources/assets/sass/index.scss */
+/* line 59, ../../resources/assets/sass/index.scss */
 .left > section > .title > p {
   font-size: 14px;
   color: #666;
 }
 /* line 65, ../../resources/assets/sass/index.scss */
 .left > section > .cover {
-  padding: 7px 18px;
   width: 764px;
+  padding: 7px 18px;
   height: 270px;
-  background-color: #a6e22e;
 }
 /* line 70, ../../resources/assets/sass/index.scss */
 .left > section > .cover > img {
   width: 100%;
   height: 100%;
 }
-/* line 77, ../../resources/assets/sass/index.scss */
+/* line 76, ../../resources/assets/sass/index.scss */
 .left > section > .information {
-  padding: 7px 18px;
+  width: 764px;
+  padding: 7px 18px 7px;
+  color: #666;
 }
 /* line 81, ../../resources/assets/sass/index.scss */
 .left > section > .information > p {
-  color: #666;
   line-height: 24px;
   text-align: justify;
 }
-/* line 87, ../../resources/assets/sass/index.scss */
-.left > section > .information > .go {
-  margin-top: 7px;
-  float: right;
+/* line 86, ../../resources/assets/sass/index.scss */
+.left > section > .information > span {
+  display: block;
+  position: relative;
+  margin: 24px 0 0;
 }
-/* line 97, ../../resources/assets/sass/index.scss */
+/* line 91, ../../resources/assets/sass/index.scss */
+.left > section > .information > span > a {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+/* line 103, ../../resources/assets/sass/index.scss */
 .left ul.pagination {
   display: inline-block;
   width: 100%;
@@ -86,11 +92,11 @@
   -webkit-border-radius: 7px;
   border-radius: 7px;
 }
-/* line 104, ../../resources/assets/sass/index.scss */
+/* line 110, ../../resources/assets/sass/index.scss */
 .left ul.pagination > li {
   display: inline;
 }
-/* line 107, ../../resources/assets/sass/index.scss */
+/* line 113, ../../resources/assets/sass/index.scss */
 .left ul.pagination > li > span,
 .left ul.pagination > li > a {
   position: relative;
@@ -106,26 +112,52 @@
   -webkit-border-radius: 7px;
   border-radius: 7px;
 }
-/* line 121, ../../resources/assets/sass/index.scss */
+/* line 127, ../../resources/assets/sass/index.scss */
 .left ul.pagination > li:first-child {
   margin-left: 0;
 }
-/* line 125, ../../resources/assets/sass/index.scss */
+/* line 131, ../../resources/assets/sass/index.scss */
 .left ul.pagination > li:last-child {
+  margin-left: 0;
   float: right;
 }
-/* line 129, ../../resources/assets/sass/index.scss */
+/* line 136, ../../resources/assets/sass/index.scss */
 .left ul.pagination > li:hover {
   color: #23527c;
 }
 
-/* line 139, ../../resources/assets/sass/index.scss */
+/* line 145, ../../resources/assets/sass/index.scss */
 .right {
-  float: left;
   width: 370px;
-  padding: 30px 17px 0;
+  box-sizing: border-box;
+  padding-left: 17px;
+  margin: 30px 0 0;
+  float: left;
 }
-/* line 148, ../../resources/assets/sass/index.scss */
+/* line 153, ../../resources/assets/sass/index.scss */
+.right > section {
+  border: 1px #ccc solid;
+}
+/* line 156, ../../resources/assets/sass/index.scss */
+.right > section:not(:first-child) {
+  margin: 27px 0 0;
+}
+/* line 160, ../../resources/assets/sass/index.scss */
+.right > section > h3 {
+  display: block;
+  padding-left: 18px;
+  margin: 14px 0 0;
+  font-size: 20px;
+  line-height: 20px;
+  border-left: #333 solid 7px;
+}
+/* line 169, ../../resources/assets/sass/index.scss */
+.right > section > ul {
+  display: block;
+  padding-left: 25px;
+  margin: 17px 0 14px;
+}
+/* line 182, ../../resources/assets/sass/index.scss */
 .right > .category > ul {
   list-style-type: none;
 }

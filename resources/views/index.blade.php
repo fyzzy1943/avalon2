@@ -20,7 +20,11 @@
           </div>
           <div class="information">
             <p>{{ $article->abstract }}</p>
-            <span class="go"><a href="/article/{{ $article->id }}">阅读全文 &gt;&gt;</a></span>
+            <span>
+              点击：
+              <a href="/article/{{ $article->id }}">阅读全文 &gt;&gt;</a>
+            </span>
+
           </div>
         </section>
       @endforeach
@@ -30,6 +34,25 @@
     </div>
 
     <div class="right">
+      <section>
+        <h3>分类列表</h3>
+        <ul>
+          <li>...</li>
+          <li>...</li>
+          <li>...</li>
+          <li>...</li>
+          <li>...</li>
+        </ul>
+      </section>
+      <section>
+        <h3>友情链接</h3>
+        <ul>
+          <li>...</li>
+          <li>...</li>
+          <li>...</li>
+        </ul>
+      </section>
+      <hr>
       <div class="category">
         <h3>分类列表</h3>
         <ul>
