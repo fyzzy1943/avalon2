@@ -10,12 +10,10 @@
       @foreach($articles as $article)
         <section>
           <div class="title">
-            <div class="date">
-              <small>{{ $article->created_at->format('Y') }}</small>
-              {{ $article->created_at->format('m-d') }}
-            </div>
-            <h2><a href="/article/{{ $article->id }}">{{ $article->title }}</a></h2>
-            <span>来源：原创 &nbsp;|  &nbsp;分类：{{ $article->category->name }}</span>
+            <strong><a href="/article/{{ $article->id }}">{{ $article->title }}</a></strong>
+            <p>来源：原创 &nbsp;|  &nbsp;分类：{{ $article->category->name }}</p>
+            <span class="date">
+              <small>{{ $article->created_at->format('Y') }}</small>{{ $article->created_at->format('m-d') }}</span>
           </div>
           <div class="cover">
             <img src="{{ $article->cover }}" title="{{ $article->title }}" alt="{{ $article->title }}">
@@ -30,6 +28,7 @@
       {{ $articles->links('layouts.partial.pagination') }}
 
     </div>
+
     <div class="right">
       <div class="category">
         <h3>分类列表</h3>

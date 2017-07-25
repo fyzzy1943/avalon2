@@ -14,7 +14,84 @@ $right_width: 1170px - $left_width;
   height: 100%;
   float: left;
 
+  >section{
+    width: $left_width;
+    margin: 30px 0 0;
 
+    border: 1px #ccc solid;
+    float: left;
+
+    &:not(:first-child){
+      margin: 27px 0 0;
+    }
+
+    >.title{
+      $padding-left : 93px;
+      position: relative;
+      width: $left_width - $padding-left -18px - 2px;
+      overflow: hidden;
+
+      padding: 7px 18px 7px $padding-left;
+
+      >.date{
+        position: absolute;
+        top: -1px;
+        left: 18px;
+        padding: 11px 8px;
+
+        background-color: #333;
+        color: #fff;
+        font-size: 16px;
+
+        >small{
+          display: block;
+          font-size: 14px;
+        }
+      }
+
+      >strong{
+        font-size: 24px;
+        font-weight: 500;
+        color: #111;
+      }
+
+      >p{
+        font-size: 14px;
+        color: #666;
+      }
+      background-color: #c0a16b;
+    }
+
+    >.cover{
+      padding: 7px 18px;
+      width: 764px;
+      height: 270px;
+
+      >img{
+        width: 100%;
+        height: 100%;
+      }
+      background-color: #a6e22e;
+    }
+
+    >.information{
+      //margin: 7px 0 10px;
+      padding: 7px 18px;
+
+      > p{
+        color: #666;
+        line-height: 24px;
+        text-align: justify;
+      }
+
+      >.go{
+        margin-top: 7px;
+        float: right;
+      }
+    }
+  }
+
+  // ### 分页 ###
 
   $border-radius-base : 7px;
   ul.pagination{
@@ -26,7 +103,6 @@ $right_width: 1170px - $left_width;
 
     >li{
       display: inline;
-      //float: left;
 
       >span,
       >a{
@@ -55,109 +131,9 @@ $right_width: 1170px - $left_width;
       }
     }
   }
-}
-section{
-  display: block;
-  float: left;
-  width: 800px;
 
-  padding: 0;
-  margin: 30px 0 0;
-
-  box-sizing: border-box;
-  border: 1px #ccc solid;
-
-  &:not(:first-child){
-    margin: 27px 0 0;
-  }
+  // --- 分页 ---
 }
-section .title{
-  width: 800px;
-  height: 70px;
-  float: left;
-}
-section .title .date{
-  width: 62px;
-  height: 65px;
-  float: left;
-
-  padding: 11px 8px;
-  margin: 0 0 0 17px;
-
-  background-color: #333;
-  color: #fff;
-  font-size: 16px;
-}
-section .title h2{
-  margin: 0;
-  height: 45px;
-  width: 721px;
-  float: left;
-  /*margin-right: 17px;*/
-  padding: 0 17px;
-
-  line-height: 45px;
-  overflow: hidden;
-  font-size: 24px;
-
-  /*border: 1px solid rebeccapurple;*/
-  display: inline-block;
-}
-section .title span{
-  display: inline-block;
-  margin: 0;
-  height: 20px;
-  width: 721px;
-  float: left;
-  padding: 0 17px;
-
-  line-height: 20px;
-  overflow: hidden;
-  font-size: 14px;
-
-  color: #666;
-}
-
-section .cover{
-  float: left;
-  padding: 0;
-  margin: 0 17px;
-  width: 764px;
-  height: 270px;
-
-  /*border: 1px solid firebrick;*/
-}
-section .cover > img{
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-section .information{
-  width: 100%;
-  float: left;
-  margin: 7px 0 10px;
-  padding: 0 17px;
-}
-section .information > p{
-  margin: 0;
-  padding: 0;
-
-  color: #666;
-  line-height: 24px;
-  text-align: justify;
-}
-section .go{
-  margin-top: 7px;
-  float: right;
-}
-section .go > a{
-  color: #333;
-}
-section .go > a:hover{
-  text-decoration: none;
-}
-
 
 
 .right{

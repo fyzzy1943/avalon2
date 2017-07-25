@@ -134,19 +134,12 @@ header h1 {
   background-color: #333;
 }
 
-/* line 11, ../../resources/assets/sass/avalon.scss */
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-/* line 16, ../../resources/assets/sass/avalon.scss */
+/* line 13, ../../resources/assets/sass/avalon.scss */
 html {
   overflow-y: scroll;
 }
 
-/* line 19, ../../resources/assets/sass/avalon.scss */
+/* line 16, ../../resources/assets/sass/avalon.scss */
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
@@ -155,60 +148,70 @@ body {
   background-color: transparent;
 }
 
-/* line 27, ../../resources/assets/sass/avalon.scss */
+/* line 24, ../../resources/assets/sass/avalon.scss */
 .container {
   width: 1170px;
   margin: 0 auto;
 }
 
-/* line 34, ../../resources/assets/sass/avalon.scss */
+/* line 31, ../../resources/assets/sass/avalon.scss */
 h1 {
   font-size: 36px;
   font-weight: 500;
   line-height: 1.1;
 }
 
-/* line 34, ../../resources/assets/sass/avalon.scss */
+/* line 31, ../../resources/assets/sass/avalon.scss */
 h2 {
   font-size: 30px;
   font-weight: 500;
   line-height: 1.1;
 }
 
-/* line 34, ../../resources/assets/sass/avalon.scss */
+/* line 31, ../../resources/assets/sass/avalon.scss */
 h3 {
   font-size: 24px;
   font-weight: 500;
   line-height: 1.1;
 }
 
-/* line 34, ../../resources/assets/sass/avalon.scss */
+/* line 31, ../../resources/assets/sass/avalon.scss */
 h4 {
   font-size: 18px;
   font-weight: 500;
   line-height: 1.1;
 }
 
-/* line 34, ../../resources/assets/sass/avalon.scss */
+/* line 31, ../../resources/assets/sass/avalon.scss */
 h5 {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.1;
 }
 
-/* line 34, ../../resources/assets/sass/avalon.scss */
+/* line 31, ../../resources/assets/sass/avalon.scss */
 h6 {
   font-size: 12px;
   font-weight: 500;
   line-height: 1.1;
 }
 
-/* line 41, ../../resources/assets/sass/avalon.scss */
+/* line 38, ../../resources/assets/sass/avalon.scss */
 a {
   color: #333;
   text-decoration: none;
 }
-/* line 45, ../../resources/assets/sass/avalon.scss */
+/* line 42, ../../resources/assets/sass/avalon.scss */
 a:hover {
   color: #23527c;
+}
+
+/* line 47, ../../resources/assets/sass/avalon.scss */
+small {
+  font-size: 12px;
+}
+
+/* line 51, ../../resources/assets/sass/avalon.scss */
+big {
+  font-size: 18px;
 }

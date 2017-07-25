@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import "compass/reset";
+
 @import "avalon/mixin";
 @import "avalon/base";
 
@@ -8,11 +10,6 @@
 
 $base-color: #333;
 
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 html{
   overflow-y: scroll;
 }
@@ -45,4 +42,12 @@ a{
   &:hover{
     color: #23527c;
   }
+}
+
+small{
+  font-size: $font-size-small;
+}
+
+big{
+  font-size: $font-size-large;
 }
