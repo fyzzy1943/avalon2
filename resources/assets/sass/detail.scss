@@ -12,9 +12,14 @@
   }
 }
 article{
-  width: 800px;
+  width: 800px - 2px;
   border: 1px #ccc solid;
+  border-top: none;
   float: left;
+
+  div#article{
+    box-sizing: border-box;
+  }
 
   >h1{
     //@include test-border(red);
@@ -33,9 +38,9 @@ article{
 }
 
 #sidebar {
+  position: fixed;
   width: 370px;
   height: 100%;
-  position: fixed;
   margin-left: 800px;
   overflow: hidden;
   top: 110px;
@@ -52,8 +57,8 @@ article{
   }
 
   h1{
-    font-size: 16px;
-    padding: 17px 7px 0;
+    font-size: 18px;
+    padding: 17px 18px 0;
   }
 
   >hr{
@@ -68,6 +73,26 @@ article{
 
 #custom-toc-container {
   padding-left: 0;
+  box-sizing: border-box;
+
+  .markdown-toc-list{
+    list-style-type: circle;
+    ul{
+      list-style-type: disc;
+      ul{
+        list-style-type: circle;
+        ul{
+          list-style-type: square;
+          ul{
+            list-style-type: circle;
+            ul{
+              list-style-type: disc;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 footer{

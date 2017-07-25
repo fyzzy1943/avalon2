@@ -11,17 +11,22 @@
 
 /* line 14, ../../resources/assets/sass/detail.scss */
 article {
-  width: 800px;
+  width: 798px;
   border: 1px #ccc solid;
+  border-top: none;
   float: left;
 }
-/* line 19, ../../resources/assets/sass/detail.scss */
+/* line 20, ../../resources/assets/sass/detail.scss */
+article div#article {
+  box-sizing: border-box;
+}
+/* line 24, ../../resources/assets/sass/detail.scss */
 article > h1 {
   display: inline-block;
   margin: 30px 0 0 17px;
   font-size: 24px;
 }
-/* line 25, ../../resources/assets/sass/detail.scss */
+/* line 30, ../../resources/assets/sass/detail.scss */
 article > hr {
   width: 760px;
   margin: 30px 0 0 20px;
@@ -31,26 +36,26 @@ article > hr {
   border-top: 1px #ddd solid;
 }
 
-/* line 35, ../../resources/assets/sass/detail.scss */
+/* line 40, ../../resources/assets/sass/detail.scss */
 #sidebar {
+  position: fixed;
   width: 370px;
   height: 100%;
-  position: fixed;
   margin-left: 800px;
   overflow: hidden;
   top: 110px;
   z-index: 9;
 }
-/* line 50, ../../resources/assets/sass/detail.scss */
+/* line 55, ../../resources/assets/sass/detail.scss */
 #sidebar:hover {
   overflow: auto;
 }
-/* line 54, ../../resources/assets/sass/detail.scss */
-#sidebar h1 {
-  font-size: 16px;
-  padding: 17px 7px 0;
-}
 /* line 59, ../../resources/assets/sass/detail.scss */
+#sidebar h1 {
+  font-size: 18px;
+  padding: 17px 18px 0;
+}
+/* line 64, ../../resources/assets/sass/detail.scss */
 #sidebar > hr {
   width: 70%;
   margin: 17px 0 0 0;
@@ -60,12 +65,37 @@ article > hr {
   border-top: 1px #ddd solid;
 }
 
-/* line 69, ../../resources/assets/sass/detail.scss */
+/* line 74, ../../resources/assets/sass/detail.scss */
 #custom-toc-container {
   padding-left: 0;
+  box-sizing: border-box;
+}
+/* line 78, ../../resources/assets/sass/detail.scss */
+#custom-toc-container .markdown-toc-list {
+  list-style-type: circle;
+}
+/* line 80, ../../resources/assets/sass/detail.scss */
+#custom-toc-container .markdown-toc-list ul {
+  list-style-type: disc;
+}
+/* line 82, ../../resources/assets/sass/detail.scss */
+#custom-toc-container .markdown-toc-list ul ul {
+  list-style-type: circle;
+}
+/* line 84, ../../resources/assets/sass/detail.scss */
+#custom-toc-container .markdown-toc-list ul ul ul {
+  list-style-type: square;
+}
+/* line 86, ../../resources/assets/sass/detail.scss */
+#custom-toc-container .markdown-toc-list ul ul ul ul {
+  list-style-type: circle;
+}
+/* line 88, ../../resources/assets/sass/detail.scss */
+#custom-toc-container .markdown-toc-list ul ul ul ul ul {
+  list-style-type: disc;
 }
 
-/* line 73, ../../resources/assets/sass/detail.scss */
+/* line 98, ../../resources/assets/sass/detail.scss */
 footer {
   clear: both;
 }
