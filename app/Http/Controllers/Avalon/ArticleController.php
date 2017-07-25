@@ -41,13 +41,15 @@ class ArticleController extends Controller
     {
         $article = new Article();
         $article->title = $request->input('title');
-        $article->doc_md = $request->input('editor-markdown-doc');
-        $article->doc_html = $request->input('editor-html-code');
-        $article->status = $request->input('status');
-        $article->cover = $request->input('cover');
-        $article->abstract = $request->input('abstract');
-        $article->uid = Auth::user()->id;
+        $article->doc_md = $request->input('editor-markdown-doc') ?? '';
+        $article->doc_html = $request->input('editor-html-code') ?? '';
+        $article->cover = $request->input('cover') ?? '';
+        $article->abstract = $request->input('abstract') ?? '';
+	    $article->status = $request->input('status');
         $article->cid = $request->input('category');
+
+
+	    $article->uid = Auth::user()->id;
 
         $article->save();
 
@@ -67,11 +69,11 @@ class ArticleController extends Controller
 		$article = Article::findOrFail($id);
 
 	    $article->title = $request->input('title');
-	    $article->doc_md = $request->input('editor-markdown-doc');
-	    $article->doc_html = $request->input('editor-html-code');
-        $article->status = $request->input('status');
-        $article->cover = $request->input('cover');
-        $article->abstract = $request->input('abstract');
+	    $article->doc_md = $request->input('editor-markdown-doc') ?? '';
+	    $article->doc_html = $request->input('editor-html-code') ?? '';
+        $article->cover = $request->input('cover') ?? '';
+        $article->abstract = $request->input('abstract') ?? '';
+	    $article->status = $request->input('status');
         $article->cid = $request->input('category');
 
 	    $article->save();

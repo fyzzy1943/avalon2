@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 @import "avalon/mixin";
+@import "avalon/base";
+
+@import "compass/css3";
+@import "compass/utilities";
 
 $left_width: 800px;
 $right_width: 1170px - $left_width;
@@ -9,6 +13,48 @@ $right_width: 1170px - $left_width;
   width: $left_width;
   height: 100%;
   float: left;
+
+
+
+  $border-radius-base : 7px;
+  ul.pagination{
+    display: inline-block;
+    width: 100%;
+    padding-left: 0;
+    margin: $line-height-computed 0;
+    @include border-radius($border-radius-base);
+
+    >li{
+      display: inline;
+      //float: left;
+
+      >span,
+      >a{
+        position: relative;
+        float: left; // Collapse white-space
+        padding: 10px 15px;
+        line-height: $line-height-base;
+        text-decoration: none;
+        color: #333;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        margin-left: -1px;
+        @include border-radius($border-radius-base);
+      }
+
+      &:first-child{
+        margin-left: 0;
+      }
+
+      &:last-child{
+        float: right;
+      }
+
+      &:hover{
+        color: #23527c;
+      }
+    }
+  }
 }
 section{
   display: block;
@@ -20,9 +66,10 @@ section{
 
   box-sizing: border-box;
   border: 1px #ccc solid;
-}
-section:not(:first-child){
-  margin: 27px 0 0;
+
+  &:not(:first-child){
+    margin: 27px 0 0;
+  }
 }
 section .title{
   width: 800px;

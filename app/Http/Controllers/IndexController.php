@@ -27,11 +27,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $articles = Article::where('status', '1')->orderBy('created_at', 'desc')->get();
-
-	    foreach ( $articles as &$article ) {
-		    $article->introduce = str_limit($article->doc_html, 300);
-        }
+        $articles = Article::where('status', '1')->orderBy('created_at', 'desc')->simplePaginate(5);
 
     	return view('index')->with('articles', $articles);
     }
