@@ -9,8 +9,8 @@
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
 
-//    "scss-cli": "scss -r compass-core --watch -t expanded resources/assets/sass:public/fantasy"
-//    "scss-prod": "scss -r compass-core -t compressed --force resources/assets/sass:public/fantasy --watch -t compressed"
+//    "scss-cli": "scss --watch -t expanded resources/assets/sass:public/fantasy"
+//    "scss-prod": "scss -t compressed --force resources/assets/sass:public/fantasy"
   },
   "devDependencies": {
     "axios": "^0.15.3",

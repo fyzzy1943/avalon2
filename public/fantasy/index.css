@@ -1,8 +1,11 @@
+/* line 8, ../../resources/assets/sass/index.scss */
 .left {
   width: 800px;
   height: 100%;
-  float: left; }
+  float: left;
+}
 
+/* line 13, ../../resources/assets/sass/index.scss */
 section {
   display: block;
   float: left;
@@ -10,16 +13,22 @@ section {
   padding: 0;
   margin: 30px 0 0;
   box-sizing: border-box;
-  border: 1px #ccc solid; }
+  border: 1px #ccc solid;
+}
 
+/* line 24, ../../resources/assets/sass/index.scss */
 section:not(:first-child) {
-  margin: 27px 0 0; }
+  margin: 27px 0 0;
+}
 
+/* line 27, ../../resources/assets/sass/index.scss */
 section .title {
   width: 800px;
   height: 70px;
-  float: left; }
+  float: left;
+}
 
+/* line 32, ../../resources/assets/sass/index.scss */
 section .title .date {
   width: 62px;
   height: 65px;
@@ -28,8 +37,10 @@ section .title .date {
   margin: 0 0 0 17px;
   background-color: #333;
   color: #fff;
-  font-size: 16px; }
+  font-size: 16px;
+}
 
+/* line 44, ../../resources/assets/sass/index.scss */
 section .title h2 {
   margin: 0;
   height: 45px;
@@ -41,8 +52,10 @@ section .title h2 {
   overflow: hidden;
   font-size: 24px;
   /*border: 1px solid rebeccapurple;*/
-  display: inline-block; }
+  display: inline-block;
+}
 
+/* line 59, ../../resources/assets/sass/index.scss */
 section .title span {
   display: inline-block;
   margin: 0;
@@ -53,50 +66,67 @@ section .title span {
   line-height: 20px;
   overflow: hidden;
   font-size: 14px;
-  color: #666; }
+  color: #666;
+}
 
+/* line 74, ../../resources/assets/sass/index.scss */
 section .cover {
   float: left;
   padding: 0;
   margin: 0 17px;
   width: 764px;
   height: 270px;
-  /*border: 1px solid firebrick;*/ }
+  /*border: 1px solid firebrick;*/
+}
 
+/* line 83, ../../resources/assets/sass/index.scss */
 section .cover > img {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
+/* line 89, ../../resources/assets/sass/index.scss */
 section .information {
   width: 100%;
   float: left;
   margin: 7px 0 10px;
-  padding: 0 17px; }
+  padding: 0 17px;
+}
 
+/* line 95, ../../resources/assets/sass/index.scss */
 section .information > p {
   margin: 0;
   padding: 0;
   color: #666;
   line-height: 24px;
-  text-align: justify; }
+  text-align: justify;
+}
 
+/* line 103, ../../resources/assets/sass/index.scss */
 section .go {
   margin-top: 7px;
-  float: right; }
+  float: right;
+}
 
+/* line 107, ../../resources/assets/sass/index.scss */
 section .go > a {
-  color: #333; }
+  color: #333;
+}
 
+/* line 110, ../../resources/assets/sass/index.scss */
 section .go > a:hover {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
+/* line 116, ../../resources/assets/sass/index.scss */
 .right {
   float: left;
   width: 370px;
-  padding: 30px 17px 0; }
+  padding: 30px 17px 0;
+}
+/* line 125, ../../resources/assets/sass/index.scss */
 .right > .category > ul {
-  list-style-type: none; }
-
-/*# sourceMappingURL=index.css.map */
+  list-style-type: none;
+}

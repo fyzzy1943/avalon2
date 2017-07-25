@@ -32,7 +32,7 @@
 <nav>
   <div class="container">
     <ul>
-      <li><a href="">首页</a></li>
+      <li><a href="/">首页</a></li>
       <li><a href="">分类</a></li>
       <li><a href="">其它</a></li>
     </ul>
