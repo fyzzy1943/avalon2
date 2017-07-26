@@ -1,18 +1,32 @@
+$padding-horizontal : 19px;
+
+header{
+  >.container{
+    padding: 0 $padding-horizontal;
+  }
+
+  h1{
+    margin: 20px 0 10px;
+    display: inline-block;
+  }
+}
+
 nav{
   width: 100%;
   background-color: #333;
-  color: #eee;
+  color: #fff;
   height: 32px;
   line-height: 32px;
 
   >.container{
-    padding: 0 18px;
+    padding: 0 $padding-horizontal;
 
-    ul{
-      list-style-type: none;
+    >ul{
+      background-color: #a6e22e;
+      display: inline-block;
 
       >li{
-        float: left;
+        display: inline;
 
         &:not(:first-child){
           margin-left: 100px;
@@ -22,17 +36,14 @@ nav{
           color: #fff;
         }
       }
+
+      &.nav-right{
+        float: right;
+
+        >li{
+          float: right;
+        }
+      }
     }
-  }
-}
-
-header{
-  >.container{
-    padding: 0 18px;
-  }
-
-  h1{
-    margin: 20px 0 10px;
-    display: inline-block;
   }
 }

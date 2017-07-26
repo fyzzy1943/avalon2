@@ -8,6 +8,7 @@
 
   <title>{{ config('app.name', 'Avalon') }}</title>
 
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
   <link href="{{ asset('fantasy/avalon.css') }}" rel="stylesheet">
 
@@ -15,6 +16,7 @@
 
 </head>
 <body>
+
 <header>
   <div class="container">
     <a href="/"><h1>Avalon2</h1></a>
@@ -28,8 +30,14 @@
       <li><a href="">分类</a></li>
       <li><a href="">其它</a></li>
     </ul>
+
+    <ul class="nav-right">
+      <li><a href="">终端</a></li>
+    </ul>
   </div>
 </nav>
+
+<div class="clearfix"></div>
 
 @yield('content')
 

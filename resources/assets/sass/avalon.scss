@@ -2,11 +2,13 @@
 
 @import "compass/reset";
 
-@import "avalon/mixin";
 @import "avalon/base";
 
 @import "avalon/header";
+@import "avalon/footer";
 @import "avalon/scrollbar";
+
+@import "compass/utilities/general/clearfix";
 
 $base-color: #333;
 
@@ -22,7 +24,9 @@ body{
 }
 
 .container{
-  width: 1170px;
+  width: $container-width;
+  height: 100%;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -50,4 +54,15 @@ small{
 
 big{
   font-size: $font-size-large;
+}
+
+.clearfix{
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
 }

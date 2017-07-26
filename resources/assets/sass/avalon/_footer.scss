@@ -1,3 +1,33 @@
 footer{
+  width: 100%;
+  border-top: 7px solid #999;
+  background-color: #333;
+  color: #fff;
 
+  >.container{
+    padding: 24px 0 48px;
+
+    >ul{
+      display: inline-block;
+      font-size: $font-size-large;
+
+      >li{
+        display: inline;
+        float: left;
+
+        &:not(:first-child){
+          margin-left: 30px;
+        }
+      }
+    }
+
+    >p{
+      display: block;
+      margin: 18px 0 0;
+    }
+
+    a{
+      color: #fff;
+    }
+  }
 }
