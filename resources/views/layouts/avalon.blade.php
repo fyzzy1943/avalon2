@@ -19,7 +19,7 @@
 
 <header>
   <div class="container">
-    <a href="/"><h1>Avalon2</h1></a>
+    <a href="/"><h1>{{ config('app.name', 'Avalon') }}</h1></a>
   </div>
 </header>
 
