@@ -47,9 +47,9 @@
       <section>
         <h3>友情链接</h3>
         <ul>
-          <li>...</li>
-          <li>...</li>
-          <li>...</li>
+          @foreach($links as $link)
+            <li><a href="{{ $link->link }}">{{ $link->name }}</a></li>
+          @endforeach
         </ul>
       </section>
       <hr>

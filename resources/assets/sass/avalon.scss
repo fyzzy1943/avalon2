@@ -12,6 +12,9 @@
 
 $base-color: #333;
 
+html, body{
+  height: 100%;
+}
 html{
   overflow-y: scroll;
 }
@@ -25,8 +28,9 @@ body{
 
 .container{
   width: $container-width;
+  min-height: 100%;
+  height: auto !important;
   height: 100%;
-  box-sizing: border-box;
   margin: 0 auto;
 }
 

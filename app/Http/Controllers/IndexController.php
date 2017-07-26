@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Link;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -29,7 +30,9 @@ class IndexController extends Controller
     {
         $articles = Article::where('status', '1')->orderBy('created_at', 'desc')->simplePaginate(5);
 
-    	return view('index')->with('articles', $articles);
+        $links = Link::orderBy('id', 'desc')->get();
+
+    	return view('index', compact('articles', 'links'));
     }
 
     /**

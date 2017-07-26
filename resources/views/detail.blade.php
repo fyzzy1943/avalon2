@@ -27,14 +27,11 @@
       </div>
     </article>
 
-    <footer>
-      <a href="/article" class="btn btn-default">返回</a>
-    </footer>
   </div>
 @endsection
 
 @section('script')
-  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   <script src="/editor/lib/marked.min.js"></script>
   <script src="/editor/lib/prettify.min.js"></script>
 
@@ -75,6 +72,8 @@
             if ($(document).scrollTop() <= 110) {
 //                $old_top = Number($sidebar.css('top').substring(0, $sidebar.css('top').indexOf('p')));
                 $('#sidebar').css('top', 110 - $(document).scrollTop());
+            } else {
+                $('#sidebar').css('top', 0);
             }
         });
 

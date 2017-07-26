@@ -22,8 +22,7 @@
 </head>
 <body>
 
-{{ dump(Request::is('avalon/article*')) }}
-{{--{{ dump(Route::is('*')) }}--}}
+{{--{{ dump(Request::is('avalon/article*')) }}--}}
 
 @include('avalon.partial.nav')
 

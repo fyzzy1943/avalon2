@@ -32,7 +32,7 @@
     </ul>
 
     <ul class="nav-right">
-      <li><a href="">终端</a></li>
+      <li><a href="/avalon"><i class="fa fa-terminal"></i> </a></li>
     </ul>
   </div>
 </nav>

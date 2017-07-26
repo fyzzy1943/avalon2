@@ -55,9 +55,9 @@
                                         登录
                                     </button>
 
-                                    <a class="btn btn-link" href="/">
-                                        Forgot Your Password?
-                                    </a>
+                                    {{--<a class="btn btn-link" href="/">--}}
+                                        {{--Forgot Your Password?--}}
+                                    {{--</a>--}}
                                 </div>
                             </div>
                         </form>

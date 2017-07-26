@@ -50,6 +50,13 @@ Route::group([
         'except' => ['show'],
     ]);
 
+    // System
+	Route::group(['prefix' => 'system'], function () {
+		Route::get('link', 'SystemController@links')->name('links');
+		Route::post('link', 'SystemController@storeLink');
+		Route::delete('link/{id}', 'SystemController@destroyLink');
+	});
+
     // Upload
     Route::post('upload/img/{name}', 'UploadController@img');
 });
