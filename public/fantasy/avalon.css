@@ -203,76 +203,77 @@ body {
   height: auto !important;
   height: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
-/* line 39, ../../resources/assets/sass/avalon.scss */
+/* line 40, ../../resources/assets/sass/avalon.scss */
 h1 {
   font-size: 36px;
   font-weight: 500;
   line-height: 1.1;
 }
 
-/* line 39, ../../resources/assets/sass/avalon.scss */
+/* line 40, ../../resources/assets/sass/avalon.scss */
 h2 {
   font-size: 30px;
   font-weight: 500;
   line-height: 1.1;
 }
 
-/* line 39, ../../resources/assets/sass/avalon.scss */
+/* line 40, ../../resources/assets/sass/avalon.scss */
 h3 {
   font-size: 24px;
   font-weight: 500;
   line-height: 1.1;
 }
 
-/* line 39, ../../resources/assets/sass/avalon.scss */
+/* line 40, ../../resources/assets/sass/avalon.scss */
 h4 {
   font-size: 18px;
   font-weight: 500;
   line-height: 1.1;
 }
 
-/* line 39, ../../resources/assets/sass/avalon.scss */
+/* line 40, ../../resources/assets/sass/avalon.scss */
 h5 {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.1;
 }
 
-/* line 39, ../../resources/assets/sass/avalon.scss */
+/* line 40, ../../resources/assets/sass/avalon.scss */
 h6 {
   font-size: 12px;
   font-weight: 500;
   line-height: 1.1;
 }
 
-/* line 46, ../../resources/assets/sass/avalon.scss */
+/* line 47, ../../resources/assets/sass/avalon.scss */
 a {
   color: #333;
   text-decoration: none;
 }
-/* line 50, ../../resources/assets/sass/avalon.scss */
+/* line 51, ../../resources/assets/sass/avalon.scss */
 a:hover {
   color: #23527c;
 }
 
-/* line 55, ../../resources/assets/sass/avalon.scss */
+/* line 56, ../../resources/assets/sass/avalon.scss */
 small {
   font-size: 12px;
 }
 
-/* line 59, ../../resources/assets/sass/avalon.scss */
+/* line 60, ../../resources/assets/sass/avalon.scss */
 big {
   font-size: 18px;
 }
 
-/* line 64, ../../resources/assets/sass/avalon.scss */
+/* line 65, ../../resources/assets/sass/avalon.scss */
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table;
 }
-/* line 69, ../../resources/assets/sass/avalon.scss */
+/* line 70, ../../resources/assets/sass/avalon.scss */
 .clearfix:after {
   clear: both;
 }
