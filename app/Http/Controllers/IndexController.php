@@ -58,4 +58,43 @@ class IndexController extends Controller
     {
 
     }
+
+	/**
+	 * Show the category page.
+	 *
+	 * @param int|null $id
+	 */
+    public function category($id = null)
+    {
+    	$articles = Article::select('articles.id', 'cid', 'title', 'articles.created_at', 'categories.name as category')->join('categories', 'articles.cid', '=', 'categories.id')->orderByRaw('cid desc, articles.id desc')->get();
+
+	    $list = array();
+	    foreach ( $articles->groupBy('cid') as &$article ) {
+	    	$tmp = array();
+		    for ( $i = 0; $i < $article->count(); ++$i) {
+			    if (! isset($tmp['name'])) {
+			    	$tmp['name'] = $article[$i]['category'];
+			    }
+			    if (! isset($tmp['count'])) {
+				    $tmp['count'] = $article->count();
+			    }
+			    if (! isset($tmp['cid'])) {
+				    $tmp['cid'] = $article[$i]['cid'];
+			    }
+
+			    $tmp['articles'][] = $article[$i]->toArray();
+
+			    if ($i == 4) {
+			    	break;
+			    }
+	    	}
+
+	    	$list[] = $tmp;
+		    unset($tmp);
+    	}
+
+    	dd($articles->groupBy('cid')->toArray(), $list);
+
+	    return view('');
+    }
 }

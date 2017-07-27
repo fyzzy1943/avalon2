@@ -26,13 +26,13 @@
 <nav>
   <div class="container">
     <ul>
-      <li><a href="/">首页</a></li>
-      <li><a href="">分类</a></li>
+      <li><a href="{{ url('article') }}">首页</a></li>
+      <li><a href="{{ url('category') }}">分类</a></li>
       <li><a href="">其它</a></li>
     </ul>
 
     <ul class="nav-right">
-      <li><a href="/avalon"><i class="fa fa-terminal"></i> </a></li>
+      <li><a href="{{ url('avalon') }}"><i class="fa fa-terminal"></i> </a></li>
     </ul>
   </div>
 </nav>

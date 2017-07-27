@@ -61,11 +61,9 @@ Route::group([
     Route::post('upload/img/{name}', 'UploadController@img');
 });
 
-
+// ### WebSite ###
 
 Route::get('article', 'IndexController@index');
 Route::get('article/{id}', 'IndexController@show');
 
-//Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('category/{id?}', 'IndexController@category');
