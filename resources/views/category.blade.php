@@ -6,7 +6,7 @@
 
 @section('content')
   <div class="container">
-    @foreach($list as $category)
+    @forelse($list as $category)
       <section>
         <h3><a href="/category/{{ $category['cid'] }}">{{ $category['name'] }}</a> <small>({{ $category['count'] }})</small></h3>
 
@@ -18,6 +18,10 @@
           @endforelse
         </ul>
       </section>
-    @endforeach
+    @empty
+      <section>
+        没有文章
+      </section>
+    @endforelse
   </div>
 @endsection
