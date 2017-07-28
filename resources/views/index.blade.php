@@ -37,11 +37,9 @@
       <section>
         <h3>分类列表</h3>
         <ul>
-          <li>...</li>
-          <li>...</li>
-          <li>...</li>
-          <li>...</li>
-          <li>...</li>
+          @foreach($categories as $category)
+            <li><a href="/category/{{ $category->id }}">{{ $category->name }}</a></li>
+          @endforeach
         </ul>
       </section>
       <section>

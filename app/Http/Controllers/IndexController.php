@@ -34,7 +34,12 @@ class IndexController extends Controller
 
         $links = Link::orderBy('id', 'desc')->get();
 
-    	return view('index', compact('articles', 'links'));
+        $categories = Article::select('categories.id', 'categories.name')
+                             ->leftJoin('categories', 'articles.cid', '=', 'categories.id')
+                             ->distinct()
+                             ->get();
+
+    	return view('index', compact('articles', 'links', 'categories'));
     }
 
     /**
@@ -71,6 +76,7 @@ class IndexController extends Controller
 	    $list = array();
 
 	    if (is_null($id)) {
+	    	// 所有分类
 
 	        $articles = Article::select('articles.id', 'cid', 'title', 'articles.created_at', 'categories.name as category')->join('categories', 'articles.cid', '=', 'categories.id')->orderByRaw('cid desc, articles.id desc')->get();
 
