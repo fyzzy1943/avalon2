@@ -82,7 +82,11 @@ class IndexController extends Controller
 				    $tmp['cid'] = $article[$i]['cid'];
 			    }
 
-			    $tmp['articles'][] = $article[$i]->toArray();
+			    $tmp['articles'][] = [
+			    	'id' => $article[$i]->id,
+				    'title' => $article[$i]->title,
+				    'created_at' => $article[$i]->created_at->format('M d, Y'),
+			    ];
 
 			    if ($i == 4) {
 			    	break;
@@ -93,8 +97,6 @@ class IndexController extends Controller
 		    unset($tmp);
     	}
 
-    	dd($articles->groupBy('cid')->toArray(), $list);
-
-	    return view('');
+	    return view('category', compact('list'));
     }
 }
