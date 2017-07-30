@@ -109,6 +109,13 @@ $top_space: 30px;
     >li{
       display: inline;
 
+      &.disabled{
+        >span{
+          cursor: default;
+          color: #ccc;
+        }
+      }
+
       >span,
       >a{
         position: relative;
@@ -121,6 +128,10 @@ $top_space: 30px;
         border: 1px solid #ccc;
         margin-left: -1px;
         @include border-radius($border-radius-base);
+      }
+
+      >a:hover{
+        color: #000;
       }
 
       &:first-child{

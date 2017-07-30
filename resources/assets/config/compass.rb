@@ -3,7 +3,7 @@ require 'compass/import-once/activate'
 
 # The environment mode. Defaults to :development, can also be :production
 environment = :development
-#environment = :production
+environment = :production
 
 # Set this to the root of your project when deployed:
 http_path = "/"
