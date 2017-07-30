@@ -1,4 +1,4 @@
-/* line 5, ../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -77,7 +77,7 @@ header h1 {
 nav {
   width: 100%;
   background-color: #333;
-  color: #fff;
+  color: #eee;
   height: 32px;
   line-height: 32px;
 }
@@ -99,13 +99,17 @@ nav > .container > ul > li:not(:first-child) {
 }
 /* line 34, ../../resources/assets/sass/avalon/_header.scss */
 nav > .container > ul > li > a {
+  color: #eee;
+}
+/* line 36, ../../resources/assets/sass/avalon/_header.scss */
+nav > .container > ul > li > a:hover {
   color: #fff;
 }
-/* line 39, ../../resources/assets/sass/avalon/_header.scss */
+/* line 42, ../../resources/assets/sass/avalon/_header.scss */
 nav > .container > ul.nav-right {
   float: right;
 }
-/* line 42, ../../resources/assets/sass/avalon/_header.scss */
+/* line 45, ../../resources/assets/sass/avalon/_header.scss */
 nav > .container > ul.nav-right > li {
   float: right;
 }
@@ -115,11 +119,11 @@ footer {
   width: 100%;
   border-top: 7px solid #999;
   background-color: #333;
-  color: #fff;
+  color: #eee;
 }
 /* line 7, ../../resources/assets/sass/avalon/_footer.scss */
 footer > .container {
-  padding: 24px 0 48px;
+  padding: 24px 0 56px;
 }
 /* line 10, ../../resources/assets/sass/avalon/_footer.scss */
 footer > .container > ul {
@@ -136,12 +140,20 @@ footer > .container > ul > li:not(:first-child) {
   margin-left: 30px;
 }
 /* line 24, ../../resources/assets/sass/avalon/_footer.scss */
-footer > .container > p {
+footer > .container > div {
   display: block;
+}
+/* line 27, ../../resources/assets/sass/avalon/_footer.scss */
+footer > .container > div p {
+  float: left;
   margin: 18px 0 0;
 }
-/* line 29, ../../resources/assets/sass/avalon/_footer.scss */
+/* line 33, ../../resources/assets/sass/avalon/_footer.scss */
 footer > .container a {
+  color: #eee;
+}
+/* line 36, ../../resources/assets/sass/avalon/_footer.scss */
+footer > .container a:hover {
   color: #fff;
 }
 

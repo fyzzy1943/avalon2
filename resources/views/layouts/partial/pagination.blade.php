@@ -14,4 +14,6 @@
       <li class="disabled"><span>@lang('pagination.next')</span></li>
     @endif
   </ul>
+@else
+  <ul class="pagination"></ul>
 @endif

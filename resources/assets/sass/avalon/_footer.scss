@@ -2,10 +2,10 @@ footer{
   width: 100%;
   border-top: 7px solid #999;
   background-color: #333;
-  color: #fff;
+  color: #eee;
 
   >.container{
-    padding: 24px 0 48px;
+    padding: 24px 0 56px;
 
     >ul{
       display: inline-block;
@@ -21,13 +21,21 @@ footer{
       }
     }
 
-    >p{
+    >div{
       display: block;
-      margin: 18px 0 0;
+
+      p{
+        float: left;
+        margin: 18px 0 0;
+      }
     }
 
     a{
-      color: #fff;
+      color: #eee;
+
+      &:hover{
+        color: #fff;
+      }
     }
   }
 }
