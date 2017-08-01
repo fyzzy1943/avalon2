@@ -20,6 +20,8 @@ div.container{
     width: 800px;
 
     >div.info{
+      margin-top: 14px;
+
       >span{
         box-sizing: border-box;
         display: block;
@@ -33,6 +35,9 @@ div.container{
 
     >h2#comment{
       padding: 24px 0 0;
+    }
+    >div#disqus_thread{
+      min-height: 270px;
     }
   }
 }

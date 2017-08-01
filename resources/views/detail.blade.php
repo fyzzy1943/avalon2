@@ -32,7 +32,7 @@
       </div>
 
       <div class="clearfix"></div>
-      <h2 id="comment">评论</h2>
+      <h2 id="comment">评论：</h2>
       <div id="disqus_thread"></div>
 
     </div>
