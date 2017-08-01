@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 @import "avalon/base";
+@import "compass/css3";
 
 .loading{
   position: relative;
@@ -12,6 +13,30 @@
     top: 37px;
   }
 }
+
+div.container{
+
+  >div.left{
+    width: 800px;
+
+    >div.info{
+      >span{
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        @include border-radius(5px);
+        border: 1px solid #66CD00;
+        border-left: 7px solid #66CD00;
+        padding: 7px;
+      }
+    }
+
+    >h2#comment{
+      padding: 24px 0 0;
+    }
+  }
+}
+
 article{
   width: 800px - 2px;
   min-height: 100%;
