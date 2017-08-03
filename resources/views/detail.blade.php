@@ -32,7 +32,7 @@
       </div>
 
       <div class="clearfix"></div>
-      <h2 id="comment">评论：</h2>
+      <h2 id="comment">评论：<small>请针对 disq.us | disquscdn.com | disqus.com 启用代理~</small></h2>
       <div id="disqus_thread"></div>
 
     </div>
