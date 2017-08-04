@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Category;
 use App\Link;
+use App\Note;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -140,5 +141,15 @@ class IndexController extends Controller
 	    }
 
 		return view('archives', compact('list'));
+    }
+
+	/**
+	 * Show the notes page.
+	 */
+    public function notes()
+    {
+		$notes = Note::orderBy('created_at', 'desc')->get();
+
+		return view('notes', ['notes' => $notes]);
     }
 }

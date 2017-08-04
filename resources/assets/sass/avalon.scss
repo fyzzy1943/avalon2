@@ -35,6 +35,15 @@ body{
   box-sizing: border-box;
 }
 
+#container{
+  width: $container-width;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
 // headings
 @each $heading, $map in $headings-font-size-map{
   #{$heading} {

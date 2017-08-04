@@ -100,3 +100,5 @@ Route::get('article/{id}', 'IndexController@show');
 Route::get('category/{id?}', 'IndexController@category');
 
 Route::get('archives', 'IndexController@archives');
+
+Route::get('notes', 'IndexController@notes');

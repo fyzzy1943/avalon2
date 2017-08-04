@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+@import "avalon/base";
+
+#container{
+
+  >section{
+    box-sizing: border-box;
+    width: $container-width;
+    overflow: hidden;
+    margin: 30px 0 0;
+    border: 1px solid #ccc;
+
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+
+    >.date{
+      //background: #a6e22e;
+      box-sizing: border-box;
+      width: 300px;
+      height: 100%;
+      text-align: right;
+      padding-right: 22px;
+
+      font-size: 24px;
+      color: #666;
+      font-style: italic;
+    }
+
+    >.content{
+      flex: auto;
+      //background-color: #c0a16b;
+      box-sizing: border-box;
+      border-left: 1px solid #ccc;
+      padding: 14px 0 14px 28px;
+    }
+  }
+}
+
