@@ -20,7 +20,7 @@
   @yield('style')
 
 </head>
-<body>
+<body style="overflow-y: scroll">
 
 {{--{{ dump(Request::is('avalon/article*')) }}--}}
 

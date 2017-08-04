@@ -40,6 +40,8 @@
             </ul>
           </li>
 
+          <li class="@if(Request::is('avalon/note*'))active @endif"><a href="{{ route('note.index') }}">笔记</a></li>
+
           <li class="@if(Request::is('avalon/system*'))active @endif dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                aria-expanded="false">系统管理 <span class="caret"></span></a>

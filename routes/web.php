@@ -78,6 +78,9 @@ Route::group([
         'except' => ['show'],
     ]);
 
+    // Note
+	Route::resource('note', 'NoteController');
+
     // System
 	Route::group(['prefix' => 'system'], function () {
 		Route::get('link', 'SystemController@links')->name('links');

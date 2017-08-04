@@ -30,7 +30,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $articles = Article::where('status', '1')->orderBy('created_at', 'desc')->simplePaginate(5);
+    	// with 起到懒加载作用，可以以一条query执行
+        $articles = Article::with('category')->where('status', '1')->orderBy('created_at', 'desc')->simplePaginate(5);
+//	    $articles = Article::where('status', '1')->orderBy('created_at', 'desc')->simplePaginate(5);
 
         $links = Link::orderBy('id', 'desc')->get();
 
