@@ -63,9 +63,9 @@ class NoteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Note $note)
     {
-        //
+		return view('avalon.note.edit', ['note' => $note]);
     }
 
     /**
@@ -77,7 +77,14 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+    	$note = Note::findOrFail($id);
+
+	    $note->doc_html = $request->input('editor-html-code') ?? '';
+	    $note->doc_md = $request->input('editor-markdown-doc') ?? '';
+
+	    $note->save();
+
+	    return redirect()->route('note.index');
     }
 
     /**

@@ -81,7 +81,7 @@ class IndexController extends Controller
 	    if (is_null($id)) {
 	    	// 所有分类
 
-	        $articles = Article::select('articles.id', 'cid', 'title', 'articles.created_at', 'categories.name as category')->join('categories', 'articles.cid', '=', 'categories.id')->orderByRaw('cid desc, articles.id desc')->get();
+	        $articles = Article::select('articles.id', 'cid', 'title', 'articles.created_at', 'categories.name as category')->join('categories', 'articles.cid', '=', 'categories.id')->whereRaw('articles.status=1')->orderByRaw('cid desc, articles.id desc')->get();
 
 		    foreach ( $articles->groupBy('cid') as &$article ) {
 		        $tmp = array();
@@ -114,7 +114,7 @@ class IndexController extends Controller
 			// 具体分类页面
 
 		    $category = Category::findOrFail($id);
-		    $articles = Article::select('id', 'title', 'created_at')->where('cid', $id)->orderBy('created_at', 'desc')->get();
+		    $articles = Article::select('id', 'title', 'created_at')->where([['cid', $id], ['status', 1]])->orderBy('created_at', 'desc')->get();
 
 		    $list[] = [
 		    	'cid' => $category->id,
@@ -132,7 +132,7 @@ class IndexController extends Controller
 	 */
     public function archives()
     {
-    	$articles = Article::orderBy('created_at', 'desc')->get();
+    	$articles = Article::orderBy('created_at', 'desc')->where('status', 1)->get();
 
     	$list = array();
 
