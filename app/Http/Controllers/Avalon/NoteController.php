@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Avalon;
 
 use App\Note;
+use App\NoteTag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,10 @@ class NoteController extends Controller
      */
     public function index()
     {
-        return view('avalon.note.index')->with('notes', Note::orderBy('created_at', 'desc')->get());
+//    	$notes = Note::with('noteTags')->orderBy('created_at', 'desc')->get();
+	    $notes = Note::orderBy('created_at', 'desc')->get();
+
+        return view('avalon.note.index')->with('notes', $notes);
     }
 
     /**
@@ -36,6 +40,28 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
+		$tags = preg_split('/\s+/', $request->input('tags'));
+
+		var_dump($tags);
+
+		var_dump(array_filter($tags, function ($v) {
+			return ! $v === '';
+		}));
+
+		foreach (array_filter($tags, function ($v) {
+			return ! $v === '';
+		}) as $tag) {
+			var_dump($tag);
+//			if (empty($tag)) {
+//				continue;
+//			}
+			$t = NoteTag::firstOrCreate(['name' => $tag]);
+			var_dump($t->id);
+		}
+
+
+		dd(NoteTag::all()->toArray());
+
         $note = new Note;
 
         $note->doc_html = $request->input('editor-html-code') ?? '';

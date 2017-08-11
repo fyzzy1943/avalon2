@@ -10,6 +10,9 @@
       <div class="form-group">
         <label for="editor">New Note</label>
         <div id="editor"></div>
+      </div><div class="form-group">
+        <label for="tags">Tags</label>
+        <input class="form-control" id="tags" name="tags" placeholder="split by space">
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-default">Submit</button>
@@ -17,23 +20,32 @@
 
       {{ csrf_field() }}
     </form>
-    <table class="table table-striped">
+    <table class="table table-striped table-bordered">
       <tr>
         <th width="5%">ID</th>
-        <th width="50%">标题</th>
-        <th width="30%">创建时间</th>
-        <th width="15%">操作</th>
+        <th width="60%">内容</th>
+        <th width="25%">创建时间</th>
+        <th width="10%">操作</th>
       </tr>
       @forelse($notes as $note)
         <tr>
-          <th>{{ $note->id }}</th>
-          <td>{!! $note->doc_html !!}</td>
+          <th rowspan="2">{{ $note->id }}</th>
+          <td rowspan="2">{!! $note->doc_html !!}</td>
           <td>{{ $note->created_at }}</td>
           <td>
             <div class="btn-group btn-group-xs" role="group" aria-label="...">
               <a href="{{ route('note.edit', $note->id) }}" class="btn btn-info btn-xs">编辑</a>
               <button class="btn btn-danger btn-xs">删除</button>
             </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" height="100%">
+            @forelse($note->noteTags as $tag)
+              <span class="label label-primary">{{ $tag->name }}</span>
+            @empty
+              <span class="label label-default" style="background-color: #aa00aa">没有标签</span>
+            @endforelse
           </td>
         </tr>
       @empty
