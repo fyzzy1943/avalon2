@@ -42,21 +42,11 @@ class NoteController extends Controller
     {
 		$tags = preg_split('/\s+/', $request->input('tags'));
 
-		var_dump($tags);
-
-		var_dump(array_filter($tags, function ($v) {
-			return ! $v === '';
-		}));
-
 		foreach (array_filter($tags, function ($v) {
-			return ! $v === '';
+			return $v !== '';
 		}) as $tag) {
-			var_dump($tag);
-//			if (empty($tag)) {
-//				continue;
-//			}
 			$t = NoteTag::firstOrCreate(['name' => $tag]);
-			var_dump($t->id);
+			
 		}
 
 
