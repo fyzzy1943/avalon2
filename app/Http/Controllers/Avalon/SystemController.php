@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Avalon;
 
 use App\Http\Requests\LinkRequest;
 use App\Link;
+use App\Sign;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -34,5 +35,28 @@ class SystemController extends Controller
 	    } else {
 		    return response()->json(false);
 	    }
+    }
+
+    /**
+     * 签到页面
+     */
+    public function sign()
+    {
+        return view('avalon.system.sign');
+    }
+
+    /**
+     * 签到
+     */
+    public function signCreate()
+    {
+        $timestamp = time();
+        $date = date('Ym', $timestamp);
+        $sign = Sign::firstOrNew(['date' => $date]);
+//        $sign = Sign::firstOrNew(['date' => $date], ['bit' => Sign::dayToBit(date('m', $timestamp))]);
+
+//        $sign->save();
+
+        return redirect()->route('sign');
     }
 }
