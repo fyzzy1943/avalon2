@@ -18,6 +18,7 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\ArticleSaved' => [
             'App\Listeners\BackupArticle',
+            \App\Listeners\LogTest::class,
         ],
     ];
 
