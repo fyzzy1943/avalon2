@@ -2,12 +2,20 @@
 
 namespace App;
 
+use App\Events\ArticleSaved;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Collection;
 
 class Article extends Model
 {
 	use softDeletes;
+	use Notifiable;
+
+	protected $events = [
+	    'saved' => ArticleSaved::class,
+    ];
 
     public function category()
     {

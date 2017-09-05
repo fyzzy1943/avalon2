@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 
 class ArticleController extends Controller
 {
@@ -24,7 +25,6 @@ class ArticleController extends Controller
 
     public function index()
     {
-
         $articles = Article::orderBy('created_at', 'desc')->get();
 
 		return view('avalon.article.index')->with('articles', $articles);
@@ -46,7 +46,7 @@ class ArticleController extends Controller
         $article->cover = $request->input('cover') ?? '';
         $article->abstract = $request->input('abstract') ?? '';
 	    $article->status = $request->input('status');
-        $article->cid = $request->input('category');
+        $article->cid = $request->input('category') ?? 0;
 
 
 	    $article->uid = Auth::user()->id;
