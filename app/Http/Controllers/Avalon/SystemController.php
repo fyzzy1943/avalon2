@@ -51,21 +51,12 @@ class SystemController extends Controller
 
         $endOfMonth = $currentTime->endOfMonth()->toDateTimeString();
 
-        echo $startOfMonth, '<br>';
+        echo $currentTime, '<br>';
         echo $endOfMonth;
 
         $signs = Sign::whereBetween('created_at', [
             $startOfMonth, $endOfMonth])
             ->get();
-
-//        $signs = Sign::where('created_at', '>', $startOfMonth)
-//            ->where('created_at', '<', $endOfMonth)
-//            ->get();
-
-//        $signs = Sign::where('created_at', '>', $startOfMonth->timestamp)
-//            ->where(DB::raw("created_at < unix_timestamp('$endOfMonth')"))->get();
-
-//        dd($signs->toArray());
 
         var_dump($signs->toArray());
 
