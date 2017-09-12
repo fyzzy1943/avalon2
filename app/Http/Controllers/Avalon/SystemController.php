@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Avalon;
 use App\Http\Requests\LinkRequest;
 use App\Link;
 use App\Sign;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class SystemController extends Controller
 {
@@ -42,6 +45,30 @@ class SystemController extends Controller
      */
     public function sign()
     {
+        $currentTime = Carbon::now();
+
+        $startOfMonth = $currentTime->startOfMonth()->toDateTimeString();
+
+        $endOfMonth = $currentTime->endOfMonth()->toDateTimeString();
+
+        echo $startOfMonth, '<br>';
+        echo $endOfMonth;
+
+        $signs = Sign::whereBetween('created_at', [
+            $startOfMonth, $endOfMonth])
+            ->get();
+
+//        $signs = Sign::where('created_at', '>', $startOfMonth)
+//            ->where('created_at', '<', $endOfMonth)
+//            ->get();
+
+//        $signs = Sign::where('created_at', '>', $startOfMonth->timestamp)
+//            ->where(DB::raw("created_at < unix_timestamp('$endOfMonth')"))->get();
+
+//        dd($signs->toArray());
+
+        var_dump($signs->toArray());
+
         return view('avalon.system.sign');
     }
 
@@ -50,12 +77,11 @@ class SystemController extends Controller
      */
     public function signCreate()
     {
-        $timestamp = time();
-        $date = date('Ym', $timestamp);
-        $sign = Sign::firstOrNew(['date' => $date]);
-//        $sign = Sign::firstOrNew(['date' => $date], ['bit' => Sign::dayToBit(date('m', $timestamp))]);
+        $sign = new Sign();
 
-//        $sign->save();
+        $sign->uid = Auth::id();
+
+        $sign->save();
 
         return redirect()->route('sign');
     }

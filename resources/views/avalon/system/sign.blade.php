@@ -7,7 +7,6 @@
     <form class="form-inline" action="{{ route('sign') }}" method="POST">
       {{ csrf_field() }}
 
-
       <button type="submit" class="btn btn-default">签到</button>
     </form>
     <hr>
