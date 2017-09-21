@@ -48,7 +48,6 @@ class SystemController extends Controller
         $currentTime = Carbon::now();
 
         $startOfMonth = $currentTime->startOfMonth()->toDateTimeString();
-
         $endOfMonth = $currentTime->endOfMonth()->toDateTimeString();
 
         echo $currentTime, '<br>';
