@@ -63,7 +63,7 @@ class SystemController extends Controller
     }
 
     /**
-     * 签到
+     * 增加一次签到
      */
     public function signCreate()
     {
