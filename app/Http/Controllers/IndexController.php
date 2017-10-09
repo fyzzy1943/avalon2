@@ -32,7 +32,10 @@ class IndexController extends Controller
     public function index()
     {
     	// with 起到懒加载作用，可以以一条query执行
-        $articles = Article::with('category')->where('status', '1')->orderBy('created_at', 'desc')->simplePaginate(5);
+        $articles = Article::with('category')
+            ->where('status', '1')
+            ->orderBy('created_at', 'desc')
+            ->simplePaginate(5);
 //	    $articles = Article::where('status', '1')->orderBy('created_at', 'desc')->simplePaginate(5);
 
         $links = Link::orderBy('id', 'desc')->get();
@@ -41,7 +44,6 @@ class IndexController extends Controller
                              ->leftJoin('categories', 'articles.cid', '=', 'categories.id')
                              ->distinct()
                              ->get();
-
     	return view('index', compact('articles', 'links', 'categories'));
     }
 
@@ -81,7 +83,11 @@ class IndexController extends Controller
 	    if (is_null($id)) {
 	    	// 所有分类
 
-	        $articles = Article::select('articles.id', 'cid', 'title', 'articles.created_at', 'categories.name as category')->join('categories', 'articles.cid', '=', 'categories.id')->whereRaw('articles.status=1')->orderByRaw('cid desc, articles.id desc')->get();
+	        $articles = Article::select('articles.id', 'cid', 'title', 'articles.created_at', 'categories.name as category')
+                ->join('categories', 'articles.cid', '=', 'categories.id')
+                ->whereRaw('articles.status=1')
+                ->orderByRaw('cid desc, articles.id desc')
+                ->get();
 
 		    foreach ( $articles->groupBy('cid') as &$article ) {
 		        $tmp = array();
@@ -114,7 +120,10 @@ class IndexController extends Controller
 			// 具体分类页面
 
 		    $category = Category::findOrFail($id);
-		    $articles = Article::select('id', 'title', 'created_at')->where([['cid', $id], ['status', 1]])->orderBy('created_at', 'desc')->get();
+		    $articles = Article::select('id', 'title', 'created_at')
+                ->where([['cid', $id], ['status', 1]])
+                ->orderBy('created_at', 'desc')
+                ->get();
 
 		    $list[] = [
 		    	'cid' => $category->id,
@@ -132,7 +141,9 @@ class IndexController extends Controller
 	 */
     public function archives()
     {
-    	$articles = Article::orderBy('created_at', 'desc')->where('status', 1)->get();
+    	$articles = Article::orderBy('created_at', 'desc')
+            ->where('status', 1)
+            ->get();
 
     	$list = array();
 

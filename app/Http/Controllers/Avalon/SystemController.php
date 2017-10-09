@@ -50,16 +50,16 @@ class SystemController extends Controller
         $startOfMonth = $currentTime->startOfMonth()->toDateTimeString();
         $endOfMonth = $currentTime->endOfMonth()->toDateTimeString();
 
-        echo $currentTime, '<br>';
-        echo $endOfMonth;
+        $signs = Sign::whereBetween('created_at', [$startOfMonth, $endOfMonth])->get();
 
-        $signs = Sign::whereBetween('created_at', [
-            $startOfMonth, $endOfMonth])
-            ->get();
+        $list = array_fill(1, date('t'), 0);
 
-        var_dump($signs->toArray());
+        foreach ($signs as $sign) {
+            $list[$sign->created_at->day] += 1;
+        }
 
-        return view('avalon.system.sign');
+//        dd($list);
+        return view('avalon.system.sign', compact('list'));
     }
 
     /**
