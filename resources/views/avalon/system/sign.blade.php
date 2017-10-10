@@ -1,5 +1,13 @@
 @extends('avalon.partial.layout')
 
+@section('style')
+  <style>
+    td, th{
+      text-align: center;
+    }
+  </style>
+@endsection
+
 @section('content')
 
   <div class="container">
@@ -41,9 +49,9 @@
                   @endif
                 </td>
 
-                  @if(($key) % 7 == 0)
-            </tr><tr>
-              @endif
+                @if(($key + $month['day_of_week']) % 7 == 0)
+                  </tr><tr>
+                @endif
               @endforeach
             </tr>
             </tbody>

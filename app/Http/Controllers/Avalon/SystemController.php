@@ -56,7 +56,6 @@ class SystemController extends Controller
 
         $list = array_fill_keys(range(1, 12), null);
 
-        var_dump(date('t', strtotime('2017-02-1')));
         foreach ($list as $month => &$item) {
             $startOfMonth = strtotime("{$year}-{$month}-01");
 
