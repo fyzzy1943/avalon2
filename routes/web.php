@@ -87,7 +87,7 @@ Route::group([
 		Route::post('link', 'SystemController@storeLink');
 		Route::delete('link/{id}', 'SystemController@destroyLink');
 
-		Route::get('sign', 'SystemController@sign')->name('sign');
+		Route::get('sign/{year?}', 'SystemController@sign')->name('sign');
 		Route::post('sign', 'SystemController@signCreate');
 	});
 

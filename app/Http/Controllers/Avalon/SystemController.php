@@ -43,22 +43,35 @@ class SystemController extends Controller
     /**
      * 签到页面
      */
-    public function sign()
+    public function sign($year = null)
     {
-        $currentTime = Carbon::now();
+        // TODO: 检查$year
 
-        $startOfMonth = $currentTime->startOfMonth()->toDateTimeString();
-        $endOfMonth = $currentTime->endOfMonth()->toDateTimeString();
+        $year = $year ?? date('Y');
 
-        $signs = Sign::whereBetween('created_at', [$startOfMonth, $endOfMonth])->get();
+        $startOfYear = "{$year}-01-01 00:00:00";
+        $endOfYear = "{$year}-12-31 23:59:59";
 
-        $list = array_fill(1, date('t'), 0);
+        $signs = Sign::whereBetween('created_at', [$startOfYear, $endOfYear])->get();
+
+        $list = array_fill_keys(range(1, 12), null);
+
+        var_dump(date('t', strtotime('2017-02-1')));
+        foreach ($list as $month => &$item) {
+            $startOfMonth = strtotime("{$year}-{$month}-01");
+
+            $item['values'] = array_fill(1, date('t', $startOfMonth), 0);
+            $item['day_of_week'] = date('w', $startOfMonth);
+
+            unset($value);
+        }
 
         foreach ($signs as $sign) {
-            $list[$sign->created_at->day] += 1;
+            $list[$sign->created_at->month]['values'][$sign->created_at->day] += 1;
         }
 
 //        dd($list);
+
         return view('avalon.system.sign', compact('list'));
     }
 
