@@ -5,23 +5,27 @@
     td, th{
       text-align: center;
     }
+    .title{
+      text-align: center;
+    }
   </style>
 @endsection
 
 @section('content')
 
+  {{--{!! dd($list) !!}--}}
   <div class="container">
 
     <form class="form-inline" action="{{ route('sign') }}" method="POST">
       {{ csrf_field() }}
 
-      <button type="submit" class="btn btn-default">签到</button>
+      <button type="submit" class="btn btn-primary" style="width: 100%">签到</button>
     </form>
     <hr>
     <div class="row">
-      <div class="col-md-4">
-
-        @foreach($list as $month)
+        @foreach($list as $index => $month)
+        <div class="col-md-4">
+          <h3 class="title"> {{ $index }} 月 </h3>
           <table class="table table-bordered table-condensed">
             <thead>
             <tr>
@@ -50,16 +54,21 @@
                 </td>
 
                 @if((($key + $month['day_of_week']) % 7 == 0)
-                      || ($key + $month['day_of_week']) < 35))
+                      && $key < count($month['values']))
                   </tr><tr>
                 @endif
               @endforeach
             </tr>
             </tbody>
           </table>
-        @endforeach
+        </div>
 
-      </div>
+        @if($index % 3 == 0 && $index < 12)
+          </div>
+          <div class="row">
+        @endif
+
+        @endforeach
     </div>
   </div>
 
