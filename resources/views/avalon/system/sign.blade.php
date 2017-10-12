@@ -49,7 +49,8 @@
                   @endif
                 </td>
 
-                @if(($key + $month['day_of_week']) % 7 == 0)
+                @if((($key + $month['day_of_week']) % 7 == 0)
+                      || ($key + $month['day_of_week']) < 35))
                   </tr><tr>
                 @endif
               @endforeach
