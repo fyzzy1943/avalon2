@@ -13,7 +13,6 @@
 
 @section('content')
 
-  {{--{!! dd($list) !!}--}}
   <div class="container">
 
     <form class="form-inline" action="{{ route('sign') }}" method="POST">
@@ -25,7 +24,7 @@
     <div class="row">
         @foreach($list as $index => $month)
         <div class="col-md-4">
-          <h3 class="title"> {{ $index }} 月 </h3>
+          <h3 class="title"> {{ $index }} 月 <small>{{ $month['total'] }} 次</small></h3>
           <table class="table table-bordered table-condensed">
             <thead>
             <tr>
@@ -41,13 +40,17 @@
             <tbody>
             <tr>
               @for($i=0; $i<$month['day_of_week']; $i++)
-                <td>{{ $month['day_of_week'] }}</td>
+                <td></td>
               @endfor
               @foreach($month['values'] as $key => $item)
                 {{--          {{ $key }} --}}
                 <td>
-                  @if($item > 0)
-                    <span class="badge" style="background-color: red;">{{ $item }}</span>
+                  @if($item == 1)
+                    <span class="badge" style="background-color: #FFCC00;">{{ $item }}</span>
+                  @elseif($item == 2)
+                    <span class="badge" style="background-color: #FF6600;">{{ $item }}</span>
+                  @elseif($item >= 3)
+                    <span class="badge" style="background-color: #FF0000;">{{ $item }}</span>
                   @else
                     <span class="badge">{{ $item }}</span>
                   @endif

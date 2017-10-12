@@ -61,12 +61,14 @@ class SystemController extends Controller
 
             $item['values'] = array_fill(1, date('t', $startOfMonth), 0);
             $item['day_of_week'] = date('w', $startOfMonth);
+            $item['total'] = 0;
 
             unset($value);
         }
 
         foreach ($signs as $sign) {
             $list[$sign->created_at->month]['values'][$sign->created_at->day] += 1;
+            $list[$sign->created_at->month]['total'] += 1;
         }
 
 //        dd($list);
