@@ -46,13 +46,13 @@
                 {{--          {{ $key }} --}}
                 <td>
                   @if($item == 1)
-                    <span class="badge" style="background-color: #FFCC00;">{{ $item }}</span>
+                    <span class="badge" style="background-color: #FFCC00;">{{ $key }}</span>
                   @elseif($item == 2)
-                    <span class="badge" style="background-color: #FF6600;">{{ $item }}</span>
+                    <span class="badge" style="background-color: #FF6600;">{{ $key }}</span>
                   @elseif($item >= 3)
-                    <span class="badge" style="background-color: #FF0000;">{{ $item }}</span>
+                    <span class="badge" style="background-color: #FF0000;">{{ $key }}</span>
                   @else
-                    <span class="badge">{{ $item }}</span>
+                    <span class="badge">{{ $key }}</span>
                   @endif
                 </td>
 
