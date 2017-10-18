@@ -163,6 +163,4 @@ class IndexController extends Controller
 
 		return view('notes', ['notes' => $notes]);
     }
-
-    
 }
