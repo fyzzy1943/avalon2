@@ -16,6 +16,13 @@
 
 </head>
 <body>
+
+<div class="container">
+  <header>
+
+  </header>
+</div>
+
 <header>
   <div class="container">
     <a href="/"><h1>{{ config('app.name', 'Avalon') }}</h1></a>
