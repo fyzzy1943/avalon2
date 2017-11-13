@@ -8,50 +8,48 @@
 
   <title>{{ config('app.name', 'Avalon') }}</title>
 
-  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-  <link href="{{ asset('fantasy/avalon.css') }}" rel="stylesheet">
-
   @yield('style')
+
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="{{ asset('fantasy/avalon.css') }}" rel="stylesheet">
 
 </head>
 <body>
 
-<div class="container">
-  <header>
+<div id="container">
 
-  </header>
+  <div class="left_col">
+    <header>
+      <div id="profile">
+        <img src="">
+      </div>
+      <h1><a href="/">{{ config('app.name') }}</a></h1>
+      <span>HeLLo WorLd</span>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="{{ url('article') }}">首页</a></li>
+        <li><a href="{{ url('category') }}">分类</a></li>
+        <li><a href="{{ url('archives') }}">归档</a></li>
+        <li><a href="{{ url('notes') }}">笔记</a></li>
+        <li><a href="{{ url('friends') }}">路标</a></li>
+        <li><a href="">其它</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="right_col">
+
+    @yield('content')
+
+    <div class="clearfix"></div>
+
+    @include('layouts.partial.footer')
+
+  </div>
+
 </div>
-
-<header>
-  <div class="container">
-    <a href="/"><h1>{{ config('app.name', 'Avalon') }}</h1></a>
-  </div>
-</header>
-
-<nav>
-  <div class="container">
-    <ul>
-      <li><a href="{{ url('article') }}">首页</a></li>
-      <li><a href="{{ url('category') }}">分类</a></li>
-      <li><a href="{{ url('archives') }}">归档</a></li>
-      <li><a href="{{ url('notes') }}">笔记</a></li>
-      <li><a href="">其它</a></li>
-    </ul>
-
-    <ul class="nav-right">
-      <li><a href="{{ url('avalon') }}"><i class="fa fa-terminal"></i> </a></li>
-    </ul>
-  </div>
-</nav>
-
-<div class="clearfix"></div>
-
-@yield('content')
-
-@include('layouts.partial.footer')
-
-@yield('script')
 
 </body>
 </html>

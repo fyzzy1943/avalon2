@@ -6,6 +6,8 @@
 
 @section('content')
   <div class="container">
+    <h1><a href="{{ url('category') }}">分类列表</a></h1>
+
     @forelse($list as $category)
       <section>
         <h3><a href="/category/{{ $category['cid'] }}">{{ $category['name'] }}</a> <small>({{ $category['count'] }})</small></h3>

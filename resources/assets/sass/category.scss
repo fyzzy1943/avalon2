@@ -3,29 +3,56 @@
 @import "avalon/base";
 
 .container{
-  padding: 30px 18px 0;
+  padding: 30px 0;
+
+  >h1{
+    padding-bottom: 7px;
+
+    a {
+      font-size: 28px;
+      line-height: 35px;
+      color: $base-color;
+      font-weight: 400;
+      text-decoration: none;
+
+      &:hover{
+        color: $url-hover-color;
+      }
+    }
+  }
 
   >section{
 
     //background-color: #c3e3b5;
 
     &:not(:first-child){
-      margin-top: 30px;
+      padding-top: 30px;
     }
 
     >h3{
+      font-size: 24px;
+      line-height: 38px;
+      font-weight: 400;
 
       >small{
-        font-size: 14px;
+        font-size: 20px;
+        font-weight: 400;
       }
     }
 
     >ul{
-      padding: 14px 24px 0;
-      list-style-type: circle;
+      padding: 7px 24px 0;
+      //list-style-type: circle;
 
       >li{
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+
+        >small {
+          font-size: 12px;
+          font-weight: 400;
+        }
       }
     }
   }

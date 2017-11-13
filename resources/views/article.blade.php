@@ -2,7 +2,7 @@
 
 @section('style')
   <link rel="stylesheet" href="{{ asset('editor/css/editormd.preview.min.css') }}" />
-  <link rel="stylesheet" href="{{ asset('fantasy/detail.css') }}">
+  <link rel="stylesheet" href="{{ asset('fantasy/article.css') }}">
 @endsection
 
 @section('content')
@@ -13,16 +13,18 @@
   <div class="container" style="display: none">
 
     <div id="sidebar">
-      <h1>目录</h1><hr>
+      <h1>index</h1>
+      <hr>
       <div class="markdown-body editormd-preview-container" id="custom-toc-container"></div>
     </div>
 
     <div class="left">
       <article>
-        {{--<h1><a name="{{ $article->title }}" class="reference-link"></a>{{ $article->title }}</h1>--}}
-        {{--<hr>--}}
+        <h1><a name="{{ $article->title }}" class="reference-link"></a>{{ $article->title }}</h1>
+        <hr>
         <div id="article">
-          <textarea title="article" style="display: none">{!! $article->withTitle !!}</textarea>
+          {{--<textarea title="article" style="display: none">{!! $article->withTitle !!}</textarea>--}}
+          <textarea title="article" style="display: none">{!! $article->doc_md !!}</textarea>
         </div>
       </article>
 
@@ -37,10 +39,8 @@
 
     </div>
   </div>
-@endsection
 
-@section('script')
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="{{ asset('engine/jquery-3.2.1.min.js') }}"></script>
   <script src="/editor/lib/marked.min.js"></script>
   <script src="/editor/lib/prettify.min.js"></script>
 
@@ -49,9 +49,6 @@
   <script src="/editor/lib/sequence-diagram.min.js"></script>
   <script src="/editor/lib/flowchart.min.js"></script>
   <script src="/editor/lib/jquery.flowchart.min.js"></script>
-  <script>
-
-  </script>
 
   <script src="/editor/editormd.min.js"></script>
   <script>
@@ -78,9 +75,9 @@
 
 
         $(document).scroll(function () {
-            if ($(document).scrollTop() <= 110) {
+            if ($(document).scrollTop() <= 3) {
 //                $old_top = Number($sidebar.css('top').substring(0, $sidebar.css('top').indexOf('p')));
-                $('#sidebar').css('top', 110 - $(document).scrollTop());
+                $('#sidebar').css('top', 3 - $(document).scrollTop());
             } else {
                 $('#sidebar').css('top', 0);
             }

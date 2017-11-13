@@ -1,41 +1,39 @@
 footer{
   width: 100%;
-  border-top: 7px solid #999;
-  background-color: #333;
-  color: #eee;
+  border-top: 1px solid #ccc;
+  //background-color: #333;
+  //color: #eee;
 
-  >.container{
-    padding: 24px 0 56px;
+  padding: 15px 0 43px;
 
-    >ul{
-      display: inline-block;
-      font-size: $font-size-large;
+  >ul{
+    display: inline-block;
+    font-size: $font-size-large;
 
-      >li{
-        display: inline;
-        float: left;
+    >li{
+      display: inline;
+      float: left;
 
-        &:not(:first-child){
-          margin-left: 30px;
-        }
+      &:not(:first-child){
+        margin-left: 30px;
       }
     }
+  }
 
-    >div{
-      display: block;
+  >div{
+    display: block;
 
-      p{
-        float: left;
-        margin: 18px 0 0;
-      }
+    p{
+      float: left;
+      margin: 11px 0 0;
     }
+  }
 
-    a{
-      color: #eee;
+  a{
+    color: $base-color;
 
-      &:hover{
-        color: #fff;
-      }
+    &:hover{
+      color: $url-hover-color;
     }
   }
 }

@@ -2,41 +2,42 @@
 
 @import "avalon/base";
 
-@import "compass/css3";
-@import "compass/utilities";
-
 $left_width: 800px;
 $right_width: 1170px - $left_width;
 $top_space: 30px;
 
-.left{
-  width: $left_width;
-  height: 100%;
-  float: left;
+.right_col{
 
-  >section{
-    width: $left_width - 2px;
-    margin: $top_space 0 0;
-
-    border: 1px #ccc solid;
-    float: left;
-
-    &:not(:first-child){
-      margin: 27px 0 0;
-    }
+  section{
+    //width: 90%;
+    //margin: 0 0 0 43px;
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd;
 
     >.title{
-      $padding-left : 93px;
       position: relative;
-      width: $left_width - $padding-left -18px;
-      overflow: hidden;
+      margin-bottom: 25px;
 
-      padding: 7px 18px 7px $padding-left;
+      h1{
+        padding-bottom: 7px;
+
+        a{
+          font-size: 28px;
+          line-height: 35px;
+          color: $base-color;
+          font-weight: 400;
+          text-decoration: none;
+
+          &:hover{
+            color: $url-hover-color;
+          }
+        }
+      }
 
       >.date{
         position: absolute;
         top: -1px;
-        left: 18px;
+        right: 11px;
         padding: 11px 8px;
 
         background-color: #333;
@@ -48,150 +49,70 @@ $top_space: 30px;
           font-size: 14px;
         }
       }
-
-      >strong{
-        font-size: 24px;
-        font-weight: 500;
-        color: #111;
-      }
-
-      >p{
-        font-size: 14px;
-        color: #666;
-      }
-    }
-
-    >.cover{
-      width: $left_width - 18px * 2;
-      padding: 7px 18px;
-      height: 270px;
-
-      >img{
-        width: 100%;
-        height: 100%;
-      }
     }
 
     >.information{
-      width: $left_width - 18px * 2;
-      padding: 7px 18px 7px;
-      color: #666;
+      padding-right: 37px;
+      font-size: 16px;
+      line-height: 28px;
 
-      >p{
-        line-height: 24px;
-        text-align: justify;
+      p{
+        margin-top: 15px;
       }
+    }
+  }
+}
 
+
+// ### 分页 ###
+$border-radius-base : 7px;
+ul.pagination{
+  display: inline-block;
+  width: 100%;
+  padding-left: 0;
+  margin: $line-height-computed 0;
+  //@include border-radius($border-radius-base);
+
+  >li{
+    display: inline;
+
+    &.disabled{
       >span{
-        display: block;
-        position: relative;
-        margin: 24px 0 0;
-
-        >a{
-          position: absolute;
-          right: 0;
-          bottom: 0;
-        }
+        cursor: default;
+        color: #ccc;
       }
     }
-  }
 
-  // ### 分页 ###
+    >span,
+    >a{
+      position: relative;
+      float: left; // Collapse white-space
+      padding: 10px 15px;
+      line-height: $line-height-base;
+      text-decoration: none;
+      color: #333;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      margin-left: -1px;
+      //@include border-radius($border-radius-base);
+    }
 
-  $border-radius-base : 7px;
-  ul.pagination{
-    display: inline-block;
-    width: 100%;
-    padding-left: 0;
-    margin: $line-height-computed 0;
-    @include border-radius($border-radius-base);
+    >a:hover{
+      color: #000;
+    }
 
-    >li{
-      display: inline;
+    &:first-child{
+      margin-left: 0;
+    }
 
-      &.disabled{
-        >span{
-          cursor: default;
-          color: #ccc;
-        }
-      }
+    &:last-child{
+      margin-left: 0;
+      float: right;
+    }
 
-      >span,
-      >a{
-        position: relative;
-        float: left; // Collapse white-space
-        padding: 10px 15px;
-        line-height: $line-height-base;
-        text-decoration: none;
-        color: #333;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        margin-left: -1px;
-        @include border-radius($border-radius-base);
-      }
-
-      >a:hover{
-        color: #000;
-      }
-
-      &:first-child{
-        margin-left: 0;
-      }
-
-      &:last-child{
-        margin-left: 0;
-        float: right;
-      }
-
-      &:hover{
-        color: #23527c;
-      }
+    &:hover{
+      color: #23527c;
     }
   }
-  // --- 分页 ---
 }
-
-
-.right{
-  width: $right_width;
-  box-sizing: border-box;
-  //background-color: #c3e3b5;
-  padding-left: 17px;
-  margin: $top_space 0 0;
-  float: left;
-
-  >section{
-    border: 1px #ccc solid;
-
-    &:not(:first-child){
-      margin: 27px 0 0;
-    }
-
-    >h3{
-      display: block;
-      padding-left: 18px;
-      margin: 14px 0 0;
-      font-size: 20px;
-      line-height: 20px;
-      border-left: #333 solid 7px
-    }
-
-    >ul{
-      display: block;
-      padding-left: 18px + 7px;
-      margin: 17px 0 14px;
-
-      >li{
-
-      }
-    }
-  }
-
-  >.category{
-
-    >ul{
-      list-style-type: none;
-    }
-  }
-
-}
+// --- 分页 ---

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,UAAU;EACR,OAAO,EAAE,WAAW;EAMlB,sCAAmB;IACjB,UAAU,EAAE,IAAI;EAKhB,iCAAM;IACJ,SAAS,EAAE,IAAI;EAInB,yBAAG;IACD,OAAO,EAAE,WAAW;IACpB,eAAe,EAAE,MAAM;IAEvB,8BAAG;MACD,WAAW,EAAE,IAAI",
+"sources": ["../../resources/assets/sass/archives.scss"],
+"names": [],
+"file": "archives.css"
+}

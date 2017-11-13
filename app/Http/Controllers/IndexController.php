@@ -60,7 +60,7 @@ class IndexController extends Controller
             throw new NotFoundHttpException();
         }
 
-	    return view('detail')->with('article', $article);
+	    return view('article')->with('article', $article);
     }
 
     /**
@@ -162,5 +162,15 @@ class IndexController extends Controller
 		$notes = Note::orderBy('created_at', 'desc')->get();
 
 		return view('notes', ['notes' => $notes]);
+    }
+
+    /*
+     * Show the friends page.
+     */
+    public function friends()
+    {
+        $links = Link::orderBy('id', 'desc')->get();
+
+        return view('friends')->with('links', $links);
     }
 }
