@@ -16,9 +16,9 @@ $top_space: 30px;
 
     >.title{
       position: relative;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
 
-      h1{
+      >h1{
         padding-bottom: 7px;
 
         a{
@@ -30,6 +30,19 @@ $top_space: 30px;
 
           &:hover{
             color: $url-hover-color;
+          }
+        }
+      }
+
+      >p{
+        color: #666;
+
+        a{
+          color: #666;
+
+          &:hover{
+            color: $url-hover-color;
+            text-decoration: none;
           }
         }
       }
@@ -53,8 +66,8 @@ $top_space: 30px;
 
     >.information{
       padding-right: 37px;
-      font-size: 16px;
-      line-height: 28px;
+      //font-size: 16px;
+      line-height: 22px;
 
       p{
         margin-top: 15px;

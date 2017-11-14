@@ -24,6 +24,7 @@ div.container{
     article{
       width: 800px - 2px;
       height: 100%;
+      padding: 30px 0 0 0;
 
       border-right: 1px #ccc solid;
       //border-top: none;
@@ -35,18 +36,19 @@ div.container{
 
       >h1{
         //@include test-border(red);
-        display: inline-block;
+        display: block;
         //margin: 30px 0 0 17px;
-        padding: 30px 20px 0 0;
+        padding-bottom: 7px;
         font-size: 28px;
         line-height: 35px;
         color: $base-color;
-        font-weight: 300;
+        font-weight: 400;
       }
 
       >hr{
         width: 730px;
-        margin: 30px 0 0 20px;
+        //margin: 30px 0 0 20px;
+        margin: 30px 0 0 0;
         border-left: none;
         border-right: none;
         border-bottom: none;
