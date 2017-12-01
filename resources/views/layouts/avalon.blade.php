@@ -20,9 +20,7 @@
 
   <div class="left_col">
     <header>
-      <div id="profile">
-        <img src="">
-      </div>
+        <img src="/shadow/profile.jpg">
       <h1><a href="/">{{ config('app.name') }}</a></h1>
       <span>HeLLo WorLd</span>
     </header>

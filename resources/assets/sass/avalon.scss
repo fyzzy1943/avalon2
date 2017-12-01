@@ -33,10 +33,13 @@ html{
     position: fixed;
     left: 0;
     top: 0;
-    background-color: #00a8c6;
+    //background-color: #00a8c6;
+    background-color: #fff;
+    border-right: #ccc 1px solid;
+    text-align: center;
 
     a{
-      color: $base-color;
+      color: $url-base-color;
       text-decoration: none;
 
       &:hover{
@@ -44,15 +47,17 @@ html{
       }
     }
 
+    hr{
+      border-top: #ccc 1px solid;
+      width: 70%;
+      margin: 27px 0 0 15%;
+    }
+
     >header{
-      margin: 43px 0 0 53px;
+      margin: 43px 0 0;
 
-      #profile{
-        margin-left: -10px;
-        background-color: #2e383c;
-        width: 150px;
-        height: 150px;
-
+      >img{
+        border-radius: 50%;
       }
 
       >h1{
@@ -69,7 +74,8 @@ html{
     }
 
     >nav{
-      margin: 43px 0 0 53px;
+      //margin: 43px 0 0 100px;
+      margin-top: 27px;
 
       ul{
         font-size: 18px;
@@ -85,7 +91,7 @@ html{
 
   .right_col{
     margin: 0 0 0 270px;
-    padding: 0 40px;
+    padding: 0 40px 70px;
     background-color: #fff;
   }
 }

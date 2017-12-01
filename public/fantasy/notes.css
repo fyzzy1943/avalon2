@@ -1,25 +1,2 @@
-#container > section {
-  box-sizing: border-box;
-  width: 1170px;
-  overflow: hidden;
-  margin: 30px 0 0;
-  border: 1px solid #ccc;
-  display: flex;
-  display: -webkit-flex;
-  align-items: center; }
-  #container > section > .date {
-    box-sizing: border-box;
-    width: 300px;
-    height: 100%;
-    text-align: right;
-    padding-right: 22px;
-    font-size: 24px;
-    color: #666;
-    font-style: italic; }
-  #container > section > .content {
-    flex: auto;
-    box-sizing: border-box;
-    border-left: 1px solid #ccc;
-    padding: 14px 0 14px 28px; }
-
+#container>section{box-sizing:border-box;width:1170px;overflow:hidden;margin:30px 0 0;border:1px solid #ccc;display:flex;display:-webkit-flex;align-items:center}#container>section>.date{box-sizing:border-box;width:300px;height:100%;text-align:right;padding-right:22px;font-size:24px;color:#666;font-style:italic}#container>section>.content{flex:auto;box-sizing:border-box;border-left:1px solid #ccc;padding:14px 0 14px 28px}
 /*# sourceMappingURL=notes.css.map */
