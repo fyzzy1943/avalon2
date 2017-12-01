@@ -30,7 +30,7 @@
 
       <div class="clearfix"></div>
       <div class="info">
-        <span>本篇文章发表于 {{ $article->created_at->format('Y-m-d H:s') }}， 最后更新于 {{ $article->updated_at->format('Y-m-d H:s') }}</span>
+        <span>本篇文章发表于 {{ $article->created_at->diffInDays(\Carbon\Carbon::now()) }} 天前，最后更新于 {{ $article->updated_at->format('Y-m-d H:i') }}</span>
       </div>
 
       <div class="clearfix"></div>
