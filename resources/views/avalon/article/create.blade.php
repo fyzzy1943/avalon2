@@ -54,6 +54,10 @@
             @endforeach
           </select>
         </div>
+        <div class="form-group">
+          <label for="tags">Tags（空格分隔）</label>
+          <input type="text" class="form-control" id="tags" name="tags" placeholder="标签">
+        </div>
       </div>
     </div>
     <div class="clearfix"></div>

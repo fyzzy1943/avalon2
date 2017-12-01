@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Events\ArticleSaved;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
@@ -83,5 +84,10 @@ class Article extends Model
     public function getWithTitleAttribute()
     {
     	return "# " . $this->title . "\n\n---\n\n" . $this->doc_md;
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'article_tag', 'article_id');
     }
 }

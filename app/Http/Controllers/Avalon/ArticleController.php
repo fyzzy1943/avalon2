@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Avalon;
 
 use App\Article;
 use App\Category;
+use App\Models\ArticleTag;
+use App\Models\Tag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -45,13 +47,25 @@ class ArticleController extends Controller
         $article->doc_html = $request->input('editor-html-code') ?? '';
         $article->cover = $request->input('cover') ?? '';
         $article->abstract = $request->input('abstract') ?? '';
-	    $article->status = $request->input('status');
         $article->cid = $request->input('category') ?? 0;
-
+	    $article->status = $request->input('status');
 
 	    $article->uid = Auth::user()->id;
 
         $article->save();
+
+        // 处理标签
+        $tags = preg_split('/\s+/', $request->input('tags'), null, PREG_SPLIT_NO_EMPTY);
+
+        foreach ($tags as $tagName) {
+            $tag = Tag::firstOrCreate(['name' => $tagName]);
+            $tag->increment('count');
+
+            ArticleTag::create([
+                'article_id' => $article->id,
+                'tag_id' => $tag->id,
+            ]);
+        }
 
 		return redirect()->route('article');
     }

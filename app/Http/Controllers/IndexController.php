@@ -44,6 +44,7 @@ class IndexController extends Controller
                              ->leftJoin('categories', 'articles.cid', '=', 'categories.id')
                              ->distinct()
                              ->get();
+
     	return view('index', compact('articles', 'links', 'categories'));
     }
 
