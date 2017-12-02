@@ -14,7 +14,7 @@
         <p>
           分类：<a href="{{ url("category/{$article->category->id}") }}">{{ $article->category->name }}</a>
           |
-          标签：@foreach($article->tags as $tag) {{ $tag->name }} @endforeach
+          标签：@foreach($article->tags as $tag) <a href="{{ url('tags/'.$tag->name) }}">{{ $tag->name }}</a> @endforeach
         </p>
         <span class="date">
           <small>{{ $article->created_at->format('Y') }}</small>{{ $article->created_at->format('m-d') }}</span>

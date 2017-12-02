@@ -14,5 +14,11 @@ const { mix } = require('laravel-mix');
 // mix.js('resources/assets/js/app.js', 'public/js')
 //    .sass('resources/assets/sass/app.scss', 'public/css');
 
-mix.sass('resources/assets/sass/avalon.scss', 'public/fantasy')
-    .sass('resources/assets/sass/index.scss', 'public/fantasy');
+// mix.sass('resources/assets/sass/avalon.scss', 'public/fantasy')
+//     .sass('resources/assets/sass/index.scss', 'public/fantasy');
+
+// 编译 sass 资源
+mix.sass('resources/assets/sass/tags.scss', 'public/fantasy')
+    .version();
+
+// mix.browserSync('my-domain.dev');

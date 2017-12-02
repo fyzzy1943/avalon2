@@ -29,6 +29,7 @@
       <ul>
         <li><a href="{{ url('article') }}">首页</a></li>
         <li><a href="{{ url('category') }}">分类</a></li>
+        <li><a href="{{ url('tags') }}">标签</a></li>
         <li><a href="{{ url('archives') }}">归档</a></li>
 {{--        <li><a href="{{ url('notes') }}">笔记</a></li>--}}
         <li><a href="{{ url('friends') }}">路标</a></li>

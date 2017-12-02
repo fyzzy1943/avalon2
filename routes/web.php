@@ -17,34 +17,6 @@ Route::get('/', function () {
     return redirect('article');
 });
 
-Route::get('/test', function () {
-//	$client = new GuzzleHttp\Client();
-//	$res = $client->request('GET', 'https://disqus.com/api/3.0/posts/list.json', [
-//		'proxy' => '127.0.0.1:8080',
-//		'query' => [
-////			'access_token' => 'dfca03f123034c148c9d24eb0555d575',
-//			'api_key' => 'QEH7lODEPmji7EPscIDbjeAxIBcqvzrpfeJuAlGqI3Rv1hEPgOa1q3GnZF7bKHBU',
-////			'api_secret' => 'IjDXl5aqM0EnHYtuG2VBcdRzVLdiu6dr81emwZP67HtPdUWunTMGCkBL6cWD5Qxl',
-//			'forum' => 'fordawn',
-//		],
-//	]);
-//
-//	dd(file_get_contents('php://temp'), $res, $res->getBody());
-
-	$curl = curl_init();
-
-	curl_setopt_array($curl, [
-		CURLOPT_URL => 'https://disqus.com/api/3.0/forums/listPosts.json?api_key=QEH7lODEPmji7EPscIDbjeAxIBcqvzrpfeJuAlGqI3Rv1hEPgOa1q3GnZF7bKHBU&forum=fordawn',
-		CURLOPT_RETURNTRANSFER => 1,
-		CURLOPT_PROXY => '127.0.0.1:8888'
-	]);
-
-	$res = json_decode(curl_exec($curl));
-	curl_close($curl);
-
-	dd($res);
-});
-
 Route::get('avalon', function() {
     return redirect('avalon/article');
 });
@@ -105,3 +77,5 @@ Route::get('category/{id?}', 'IndexController@category');
 Route::get('archives', 'IndexController@archives');
 Route::get('friends', 'IndexController@friends');
 Route::get('notes', 'IndexController@notes');
+
+Route::get('tags/{name?}', 'IndexController@tags');

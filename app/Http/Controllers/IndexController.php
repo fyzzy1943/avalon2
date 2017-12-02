@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Category;
 use App\Link;
+use App\Models\ArticleTag;
+use App\Models\Tag;
 use App\Note;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -33,6 +35,7 @@ class IndexController extends Controller
     {
     	// with 起到懒加载作用，可以以一条query执行
         $articles = Article::with('category')
+            ->with('tags')
             ->where('status', '1')
             ->orderBy('created_at', 'desc')
             ->simplePaginate(5);
@@ -135,6 +138,32 @@ class IndexController extends Controller
 	    }
 
 	    return view('category', compact('list'));
+    }
+
+    /**
+     * Show tags page.
+     *
+     * @param null|int $id
+     */
+    public function tags($name = null)
+    {
+        $tags = Tag::get();
+
+        $articles = [];
+        if (isset($name)) {
+            $tag = Tag::where('name', $name)->first();
+
+            if ($tag) {
+                $articlesIds = ArticleTag::where('tag_id', $tag->id)->get();
+                $articlesIdsArr = array_column($articlesIds->toArray(), 'article_id');
+                $articles = Article::whereIn('id', $articlesIdsArr)
+                    ->where('status', '1')
+                    ->orderBy('created_at', 'desc')
+                    ->get();
+            }
+        }
+
+        return view('tags', compact('tags', 'articles'));
     }
 
 	/**
