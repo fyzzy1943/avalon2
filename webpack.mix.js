@@ -19,6 +19,8 @@ const { mix } = require('laravel-mix');
 
 // 编译 sass 资源
 mix.sass('resources/assets/sass/tags.scss', 'public/fantasy')
+    .sass('resources/assets/sass/friends.scss', 'public/fantasy')
+    .sass('resources/assets/sass/avalon.scss', 'public/fantasy')
     .version();
 
 // mix.browserSync('my-domain.dev');

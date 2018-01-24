@@ -11,7 +11,7 @@
   @yield('style')
 
   <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="{{ asset('fantasy/avalon.css') }}" rel="stylesheet">
+  <link href="{{ mix('fantasy/avalon.css') }}" rel="stylesheet">
 
 </head>
 <body>

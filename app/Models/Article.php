@@ -52,25 +52,24 @@ class Article extends Model
 	use softDeletes;
 	use Notifiable;
 
+	const STATUS_DRAFT = 0;
+	const STATUS_PUBLISHED = 1;
+	const STATUS_HIDDEN = 2;
+
 	protected $events = [
 	    'saved' => ArticleSaved::class,
     ];
 
-    public function category()
-    {
-        return $this->belongsTo('App\Category', 'cid');
-    }
-
     public function getStatusDAttribute($value)
     {
         switch ($this->status) {
-            case 0:
+            case self::STATUS_DRAFT:
                 $value = '草稿';
                 break;
-            case 1:
+            case self::STATUS_PUBLISHED:
                 $value = '已发布';
                 break;
-            case 2:
+            case self::STATUS_HIDDEN:
                 $value = '隐藏';
                 break;
             default:
@@ -84,6 +83,11 @@ class Article extends Model
     public function getWithTitleAttribute()
     {
     	return "# " . $this->title . "\n\n---\n\n" . $this->doc_md;
+    }
+
+    public function category()
+    {
+        return $this->belongsTo('App\Category', 'cid', 'id');
     }
 
     public function tags()

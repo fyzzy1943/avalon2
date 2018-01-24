@@ -8,11 +8,8 @@ use App\Link;
 use App\Models\ArticleTag;
 use App\Models\Tag;
 use App\Note;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\Translation\Exception\NotFoundResourceException;
 
 class IndexController extends Controller
 {
@@ -33,17 +30,15 @@ class IndexController extends Controller
      */
     public function index()
     {
-    	// with 起到懒加载作用，可以以一条query执行
         $articles = Article::with('category')
             ->with('tags')
-            ->where('status', '1')
+            ->where('status', Article::STATUS_PUBLISHED)
             ->orderBy('created_at', 'desc')
-            ->simplePaginate(5);
-//	    $articles = Article::where('status', '1')->orderBy('created_at', 'desc')->simplePaginate(5);
+            ->simplePaginate(config('default.page_count'));
 
         $links = Link::orderBy('id', 'desc')->get();
 
-        $categories = Article::select('categories.id', 'categories.name')
+        $categories = Article::select(['categories.id', 'categories.name'])
                              ->leftJoin('categories', 'articles.cid', '=', 'categories.id')
                              ->distinct()
                              ->get();
@@ -60,7 +55,7 @@ class IndexController extends Controller
     {
         $article = Article::findOrFail($id);
 
-        if (1 !== $article->status) {
+        if (Article::STATUS_PUBLISHED !== $article->status) {
             throw new NotFoundHttpException();
         }
 
@@ -87,20 +82,26 @@ class IndexController extends Controller
 	    if (is_null($id)) {
 	    	// 所有分类
 
-	        $articles = Article::select('articles.id', 'cid', 'title', 'articles.created_at', 'categories.name as category')
+            $articles = Article::select([
+                'articles.id',
+                'cid',
+                'title',
+                'articles.created_at',
+                'categories.name as category',
+            ])
                 ->join('categories', 'articles.cid', '=', 'categories.id')
-                ->whereRaw('articles.status=1')
+                ->where('articles.status', Article::STATUS_PUBLISHED)
                 ->orderByRaw('cid desc, articles.id desc')
                 ->get();
 
 		    foreach ( $articles->groupBy('cid') as &$article ) {
 		        $tmp = array();
-			    for ( $i = 0; $i < $article->count(); ++$i) {
+			    for ( $i = 0; $i < count($article); ++$i) {
 				    if (! isset($tmp['name'])) {
 				        $tmp['name'] = $article[$i]['category'];
 				    }
 				    if (! isset($tmp['count'])) {
-					    $tmp['count'] = $article->count();
+					    $tmp['count'] = count($article);
 				    }
 				    if (! isset($tmp['cid'])) {
 					    $tmp['cid'] = $article[$i]['cid'];
@@ -124,8 +125,15 @@ class IndexController extends Controller
 			// 具体分类页面
 
 		    $category = Category::findOrFail($id);
-		    $articles = Article::select('id', 'title', 'created_at')
-                ->where([['cid', $id], ['status', 1]])
+		    $articles = Article::select([
+		        'id',
+                'title',
+                'created_at',
+            ])
+                ->where([
+                    ['cid', $id],
+                    ['status', Article::STATUS_PUBLISHED]
+                ])
                 ->orderBy('created_at', 'desc')
                 ->get();
 
@@ -172,7 +180,7 @@ class IndexController extends Controller
     public function archives()
     {
     	$articles = Article::orderBy('created_at', 'desc')
-            ->where('status', 1)
+            ->where('status', Article::STATUS_PUBLISHED)
             ->get();
 
     	$list = array();
@@ -199,7 +207,7 @@ class IndexController extends Controller
      */
     public function friends()
     {
-        $links = Link::orderBy('id', 'desc')->get();
+        $links = Link::orderByRaw('RAND()')->limit(20)->get();
 
         return view('friends')->with('links', $links);
     }
