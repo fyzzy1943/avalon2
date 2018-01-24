@@ -21,5 +21,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Link extends Model
 {
-	protected $fillable = ['name', 'link'];
+	protected $fillable = [
+	    'name',
+        'link',
+        'introduction',
+        'avatar',
+    ];
 }
