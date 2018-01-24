@@ -22,7 +22,12 @@ class SystemController extends Controller
 
     public function storeLink(LinkRequest $request)
     {
-    	$link = new Link($request->all());
+    	$link = new Link();
+
+    	$link->name = $request->input('name');
+    	$link->link = $request->input('link');
+    	$link->introduction = $request->input('introduction') ?? '';
+    	$link->avatar = $request->input('avatar') ?? '';
 
     	$link->save();
 

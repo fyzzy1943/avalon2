@@ -25,6 +25,7 @@
 {{--{{ dump(Request::is('avalon/article*')) }}--}}
 
 @include('avalon.partial.nav')
+@include('avalon.partial.errors')
 
 @yield('content')
 
