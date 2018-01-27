@@ -5,11 +5,8 @@ namespace App\Http\Controllers\Avalon;
 use App\Http\Requests\LinkRequest;
 use App\Link;
 use App\Sign;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class SystemController extends Controller
 {

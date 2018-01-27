@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Avalon;
 
-use App\Category;
+use App\Models\Article;
+use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -86,6 +87,15 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = Article::where('cid', $id)->first();
+        if ($article) {
+            return $this->formatFailureOutput('删除失败，该分类下存在文章');
+        }
+
+        $category = Category::findOrFail($id);
+
+        $category->delete();
+
+        return $this->formatJsonOutput();
     }
 }

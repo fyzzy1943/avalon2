@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers\Avalon;
 
-use App\Article;
-use App\Category;
+use App\Models\Article;
+use App\Models\Category;
 use App\Models\ArticleTag;
 use App\Models\Tag;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Crypt;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Log;
 
 class ArticleController extends Controller
 {
@@ -75,6 +72,7 @@ class ArticleController extends Controller
         $categories = Category::all();
 
         $article = Article::where('id', $id)->first();
+
         return view('avalon.article.edit')->with('article', $article)->with('categories', $categories);
     }
 
