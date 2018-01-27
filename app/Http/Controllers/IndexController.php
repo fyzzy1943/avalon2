@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
-use App\Category;
+use App\Models\Article;
+use App\Models\Category;
 use App\Link;
 use App\Models\ArticleTag;
 use App\Models\Tag;
@@ -34,7 +34,7 @@ class IndexController extends Controller
             ->with('tags')
             ->where('status', Article::STATUS_PUBLISHED)
             ->orderBy('created_at', 'desc')
-            ->simplePaginate(config('default.page_count'));
+            ->simplePaginate(config('default.page_count', 10));
 
         $links = Link::orderBy('id', 'desc')->get();
 

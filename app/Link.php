@@ -18,6 +18,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Link whereLink($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Link whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Link whereUpdatedAt($value)
+ * @property string $introduction 简介
+ * @property string $avatar 头像
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Link whereAvatar($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Link whereIntroduction($value)
  */
 class Link extends Model
 {

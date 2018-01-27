@@ -29,18 +29,13 @@
               <li><a href="{{ url('avalon/article/recycle') }}">回收站</a></li>
             </ul>
           </li>
-          <li class="@if(Request::is('avalon/category*'))active @endif dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-               aria-expanded="false">分类 <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="{{ route('category.index') }}">列表</a></li>
-              <li><a href="{{ route('category.create') }}">添加</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
+          <li class="@if(Request::is('avalon/category*'))active @endif">
+            <a href="{{ route('category.index') }}">分类</a>
           </li>
 
-          <li class="@if(Request::is('avalon/note*'))active @endif"><a href="{{ route('note.index') }}">笔记</a></li>
+          <li class="@if(Request::is('avalon/note*'))active @endif">
+            <a href="{{ route('note.index') }}">笔记</a>
+          </li>
 
           <li class="@if(Request::is('avalon/system*'))active @endif dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
