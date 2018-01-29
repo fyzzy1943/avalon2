@@ -12,9 +12,11 @@ class Article extends Model
 	use softDeletes;
 	use Notifiable;
 
-	const STATUS_DRAFT = 0;
-	const STATUS_PUBLISHED = 1;
-	const STATUS_HIDDEN = 2;
+	const STATUS_DRAFT = 0; // 草稿
+	const STATUS_PUBLISHED = 1; // 已发布
+	const STATUS_HIDDEN = 2; // 隐藏
+
+    protected $perPage = 10;
 
 	protected $events = [
 	    'saved' => ArticleSaved::class,

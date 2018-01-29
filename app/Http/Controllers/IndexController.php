@@ -34,7 +34,7 @@ class IndexController extends Controller
             ->with('tags')
             ->where('status', Article::STATUS_PUBLISHED)
             ->orderBy('created_at', 'desc')
-            ->simplePaginate(config('default.page_count', 10));
+            ->simplePaginate();
 
         $links = Link::orderBy('id', 'desc')->get();
 
