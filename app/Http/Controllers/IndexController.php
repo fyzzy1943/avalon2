@@ -59,6 +59,8 @@ class IndexController extends Controller
             throw new NotFoundHttpException();
         }
 
+        Article::where('id', $id)->increment('page_views');
+
 	    return view('article')->with('article', $article);
     }
 
