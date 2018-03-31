@@ -14,7 +14,7 @@ class AddColumnToArticles extends Migration
     public function up()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->integer('page_views')->after('doc_html');
+            $table->integer('page_views')->default(0)->after('doc_html');
         });
     }
 
