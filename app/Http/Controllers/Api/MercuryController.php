@@ -14,4 +14,11 @@ class MercuryController extends Controller
 
         return $this->formatJsonOutput();
     }
+
+    public function show(Request $request)
+    {
+        $mercury = Mercury::all();
+
+        return $this->formatJsonOutput($mercury);
+    }
 }

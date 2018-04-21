@@ -26,5 +26,7 @@ Route::group([
 ], function () {
 
     Route::post('mercury', 'MercuryController@increase');
+
+    Route::get('mercury', 'MercuryController@show');
 });
 //Route::post('mercury', '');
