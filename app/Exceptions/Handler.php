@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -44,7 +45,21 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        if (str_contains($request->fullUrl(), '/api/')) {
+            $info = $exception;
+
+            if ($exception instanceof MethodNotAllowedHttpException) {
+                $info = 'method mot allowed.';
+            }
+
+            return response()->json([
+                'code' => 1000,
+                'msg' => 'error',
+                'info' => $info,
+            ]);
+        } else {
+            return parent::render($request, $exception);
+        }
     }
 
     /**

@@ -20,3 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('test', function() {
     return App::version();
 });
+
+Route::group([
+    'namespace' => 'Api',
+], function () {
+
+    Route::post('mercury', 'MercuryController@increase');
+});
+//Route::post('mercury', '');
