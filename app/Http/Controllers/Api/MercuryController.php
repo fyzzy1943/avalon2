@@ -12,13 +12,18 @@ class MercuryController extends Controller
     {
         Mercury::create();
 
-        return $this->formatJsonOutput();
+        $count = Mercury::count();
+
+        return $this->formatJsonOutput($count);
     }
 
     public function show(Request $request)
     {
         $mercury = Mercury::all();
 
-        return $this->formatJsonOutput($mercury);
+        return $this->formatJsonOutput([
+            'count' => $mercury->count(),
+            'list' => $mercury,
+        ]);
     }
 }
