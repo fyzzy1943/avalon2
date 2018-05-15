@@ -9,7 +9,7 @@
   <h1><a href="{{ url('archives') }}">友情链接</a></h1>
 
   @forelse($links as $link)
-    <a href="{{ $link->$link }}" class="section">
+    <a href="{{ $link->link }}" class="section">
         <h3>{{ $link->name }}</h3>
         <p>{{ $link->introduction }}</p>
     </a>
