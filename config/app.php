@@ -2,6 +2,9 @@
 
 return [
 
+    'qiniu_access_key' => env('QINIU_ACCESS_KEY'),
+    'qiniu_secret_key' => env('QINIU_SECRET_KEY'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

@@ -21,12 +21,10 @@ Route::get('test', function() {
     return App::version();
 });
 
-Route::group([
-    'namespace' => 'Api',
-], function () {
+Route::group(['namespace' => 'Api'], function () {
 
     Route::post('mercury', 'MercuryController@increase');
-
     Route::get('mercury', 'MercuryController@show');
+    Route::get('download', 'FileController@download');
 });
 //Route::post('mercury', '');
