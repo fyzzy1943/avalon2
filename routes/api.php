@@ -26,5 +26,10 @@ Route::group(['namespace' => 'Api'], function () {
     Route::post('mercury', 'MercuryController@increase');
     Route::get('mercury', 'MercuryController@show');
     Route::get('download', 'FileController@download');
+
+    Route::group(['prefix' => 'file'], function () {
+
+        Route::get('rainy', 'FileController@rainy');
+    });
 });
 //Route::post('mercury', '');
