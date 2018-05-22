@@ -12,14 +12,9 @@
 */
 
 
-Route::get('/', function () {
-//    return $app->version();
-    return redirect('article');
-});
+Route::get('/', 'IndexController@home');
 
-Route::get('avalon', function() {
-    return redirect('avalon/article');
-});
+Route::get('avalon', 'Avalon\IndexController@index');
 
 Route::get('login', 'Avalon\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Avalon\LoginController@login');

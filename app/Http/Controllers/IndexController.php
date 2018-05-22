@@ -23,6 +23,11 @@ class IndexController extends Controller
 
     }
 
+    public function home(Request $request)
+    {
+        return redirect('article');
+    }
+
     /**
      * Show the index page.
      *
