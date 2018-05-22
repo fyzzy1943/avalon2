@@ -6,7 +6,7 @@
 
 @task('git')
     cd app/avalon2
-    git fetch origin master
+    git fetch --all
     git reset --hard origin/master
 @endtask
 
