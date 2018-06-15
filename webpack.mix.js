@@ -21,6 +21,7 @@ let mix = require('laravel-mix');
 mix.sass('resources/assets/sass/tags.scss', 'public/fantasy')
     .sass('resources/assets/sass/friends.scss', 'public/fantasy')
     .sass('resources/assets/sass/avalon.scss', 'public/fantasy')
+    .sass('resources/assets/sass/index.scss', 'public/fantasy')
     .version();
 
 // mix.browserSync('my-domain.dev');

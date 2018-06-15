@@ -33,7 +33,7 @@ class ArticleController extends Controller
     {
         $categories = Category::all();
 
-    	return view('avalon.article.create', compact('categories'));
+    	return view('avalon.article.create_vue', compact('categories'));
     }
 
     public function store(Request $request)

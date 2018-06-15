@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', 'IndexController@home');
+Route::get('/', 'IndexController@index');
 
 Route::get('avalon', 'Avalon\IndexController@index');
 
@@ -64,7 +64,7 @@ Route::group([
 
 // ### WebSite ###
 
-Route::get('article', 'IndexController@index');
+Route::get('article', 'IndexController@article');
 Route::get('article/{id}', 'IndexController@show');
 
 Route::get('category/{id?}', 'IndexController@category');

@@ -31,6 +31,8 @@ Route::group(['namespace' => 'Api'], function () {
 
         Route::get('rainy', 'FileController@rainy');
     });
+
+    Route::apiResource('category', 'CategoryController');
 });
 //Route::post('mercury', '');
 //

@@ -5,7 +5,9 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -46,16 +48,27 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if (str_contains($request->fullUrl(), '/api/')) {
-            $info = $exception;
 
             if ($exception instanceof MethodNotAllowedHttpException) {
-                $info = 'method mot allowed.';
+                $msg = 'method mot allowed.';
+            }
+
+            if ($exception instanceof NotFoundHttpException) {
+                $msg = 'Api Not Found.';
+            }
+
+            if ($exception instanceof ValidationException) {
+                $errors = $exception->validator->errors()->getMessages();
+                $errorMessages = [];
+                foreach ($errors as $attribute => $messages) {
+                    $errorMessages[] = $attribute . ':' . implode(' ', $messages);
+                }
+                $msg = implode(';', $errorMessages);
             }
 
             return response()->json([
                 'code' => 1000,
-                'msg' => 'error',
-                'info' => $info,
+                'msg' => $msg,
             ]);
         } else {
             return parent::render($request, $exception);

@@ -23,7 +23,7 @@ class IndexController extends Controller
 
     }
 
-    public function home(Request $request)
+    public function index(Request $request)
     {
         return redirect('article');
     }
@@ -33,7 +33,7 @@ class IndexController extends Controller
      *
      * @param Request $request
      */
-    public function index()
+    public function article()
     {
         $articles = Article::with('category')
             ->with('tags')
@@ -48,7 +48,7 @@ class IndexController extends Controller
                              ->distinct()
                              ->get();
 
-    	return view('index', compact('articles', 'links', 'categories'));
+    	return view('articles', compact('articles', 'links', 'categories'));
     }
 
     /**

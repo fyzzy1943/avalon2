@@ -1,9 +1,6 @@
 {
-  "/mix.js": "/mix.a4ab16733a72ddd37b95.js",
-  "/css/avalon.css": "/css/avalon.css",
-  "/css/index.css": "/css/index.css",
-  "/fantasy/avalon.css": "/fantasy/avalon.8d375b0da1aa478522f5c3630c59411a.css",
-  "/fantasy/index.css": "/fantasy/index.css",
-  "/fantasy/tags.css": "/fantasy/tags.b04723bbee828428a1778b3d1fd43337.css",
-  "/fantasy/friends.css": "/fantasy/friends.87fea3c3e2b9a0f308345fc2d89c1980.css"
+    "/fantasy/tags.css": "/fantasy/tags.css?id=9e064de8f6825ee9098e",
+    "/fantasy/friends.css": "/fantasy/friends.css?id=88b98776393b4d1531f5",
+    "/fantasy/avalon.css": "/fantasy/avalon.css?id=1dbae71975862e9b91f5",
+    "/fantasy/index.css": "/fantasy/index.css?id=e8c42f1c3bd62fa4e5ac"
 }
