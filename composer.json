@@ -25,7 +25,10 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files": [
+            "bootstrap/helper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

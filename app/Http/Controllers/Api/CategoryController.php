@@ -8,6 +8,12 @@ use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:web-api', ['except' => 'index']);
+//        $this->middleware('auth:web-api');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +23,9 @@ class CategoryController extends Controller
     {
         $categories = Category::orderBy('created_at')->get();
 
+//        dd(generate_token());
+//
+//        dd(\Auth::id());
         return $this->formatJsonOutput($categories);
     }
 

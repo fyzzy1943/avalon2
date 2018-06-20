@@ -2,10 +2,15 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\Auth\WebTokenGuard;
+use Illuminate\Auth\CreatesUserProviders;
 use Illuminate\Support\ServiceProvider;
+use Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
+    use CreatesUserProviders;
+
     /**
      * Bootstrap any application services.
      *
@@ -13,7 +18,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        Schema::defaultStringLength(191);
+//        Schema::defaultStringLength(191);\
+
+        Auth::extend('web-token', function ($app, $name, $config) {
+            $guard = new WebTokenGuard(
+                $this->createUserProvider($config['provider'] ?? null),
+                $app['request'],
+                $config['input_key'],
+                $config['storage_key']
+            );
+
+            $app->refresh('request', $guard, 'setRequest');
+
+            return $guard;
+        });
     }
 
     /**

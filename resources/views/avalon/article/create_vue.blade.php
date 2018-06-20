@@ -105,9 +105,10 @@
           createCategory: function () {
             this.$http.post('/api/category', {
                 "name": this.tmpCategory,
-                "_token": "{{ csrf_token() }}"
+                {{--"_token": "{{ csrf_token() }}"--}}
+                "token": "{{ generate_token() }}"
             }).then(function (data) {
-                console.log(data);
+                // console.log(data);
                 if (data.body.code == 0) {
                     this.categories.push(data.body.data);
                     this.tmpCategory = '';

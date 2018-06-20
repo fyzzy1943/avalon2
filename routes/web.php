@@ -12,9 +12,8 @@
 */
 
 
-Route::get('/', 'IndexController@index');
-
-Route::get('avalon', 'Avalon\IndexController@index');
+Route::redirect('/', 'article');
+Route::redirect('avalon', 'avalon/article');
 
 Route::get('login', 'Avalon\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Avalon\LoginController@login');

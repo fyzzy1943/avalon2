@@ -48,6 +48,15 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if (str_contains($request->fullUrl(), '/api/')) {
+            $code = 1000;
+            $msg = $exception->getMessage();
+            $debug = [
+                'message' => $exception->getMessage(),
+                'code' => $exception->getCode(),
+                'file' => $exception->getFile(),
+                'line' => $exception->getLine(),
+                'trace' => $exception->getTraceAsString(),
+            ];
 
             if ($exception instanceof MethodNotAllowedHttpException) {
                 $msg = 'method mot allowed.';
@@ -67,8 +76,9 @@ class Handler extends ExceptionHandler
             }
 
             return response()->json([
-                'code' => 1000,
+                'code' => $code,
                 'msg' => $msg,
+                'debug' => config('app.debug') ? $debug : null,
             ]);
         } else {
             return parent::render($request, $exception);
