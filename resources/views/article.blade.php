@@ -21,6 +21,12 @@
     <div class="left">
       <article>
         <h1><a name="{{ $article->title }}" class="reference-link"></a>{{ $article->title }}</h1>
+        <span>
+          分类:{{ $article->category->name }} |
+          标签:@foreach($article->tags as $tag) {{ $tag->name }} @endforeach |
+          点击:{{ $article->page_views }}
+          @auth | <a href="/avalon/article/{{ $article->id }}/edit">编辑</a> @endauth
+        </span>
         <hr>
         <div id="article">
           {{--<textarea title="article" style="display: none">{!! $article->withTitle !!}</textarea>--}}
