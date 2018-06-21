@@ -21,7 +21,7 @@
     <div class="left">
       <article>
         <h1><a name="{{ $article->title }}" class="reference-link"></a>{{ $article->title }}</h1>
-        <span>
+        <span id="info">
           分类:{{ $article->category->name }} |
           标签:@foreach($article->tags as $tag) {{ $tag->name }} @endforeach |
           点击:{{ $article->page_views }}
