@@ -22,6 +22,7 @@
       <article>
         <h1><a name="{{ $article->title }}" class="reference-link"></a>{{ $article->title }}</h1>
         <span id="info">
+          {{ $article->created_at->format('Y/m/d') }} |
           分类:{{ $article->category->name }} |
           标签:@foreach($article->tags as $tag) {{ $tag->name }} @endforeach |
           点击:{{ $article->page_views }}
@@ -36,7 +37,7 @@
 
       <div class="clearfix"></div>
       <div class="info">
-        <span>本篇文章发表于 {{ $article->created_at->diffInDays(\Carbon\Carbon::now()) }} 天前，最后更新于 {{ $article->updated_at->format('Y-m-d H:i') }}</span>
+        <span>本篇文章最后更新于 {{ $article->article_updated_at->format('Y-m-d H:i') }}（{{ $article->article_updated_at->diffForHumans() }}）</span>
       </div>
 
       <div class="clearfix"></div>

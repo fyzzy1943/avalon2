@@ -8,6 +8,7 @@ use App\Link;
 use App\Models\ArticleTag;
 use App\Models\Tag;
 use App\Note;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -65,6 +66,8 @@ class IndexController extends Controller
         }
 
         Article::where('id', $id)->increment('page_views');
+
+        Carbon::setLocale('zh');
 
 	    return view('article')->with('article', $article);
     }

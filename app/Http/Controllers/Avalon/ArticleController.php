@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\ArticleTag;
 use App\Models\Tag;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
@@ -45,6 +46,7 @@ class ArticleController extends Controller
         $article->cover = $request->input('cover') ?? '';
         $article->abstract = $request->input('abstract') ?? '';
         $article->cid = $request->input('category') ?? 0;
+        $article->article_updated_at = Carbon::now();
 	    $article->status = $request->input('status');
 
 	    $article->uid = Auth::user()->id;
@@ -87,6 +89,7 @@ class ArticleController extends Controller
         $article->abstract = $request->input('abstract') ?? '';
 	    $article->status = $request->input('status');
         $article->cid = $request->input('category');
+        $article->article_updated_at = Carbon::now();
 
 	    $article->save();
 

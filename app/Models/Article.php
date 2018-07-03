@@ -16,6 +16,14 @@ class Article extends Model
 	const STATUS_PUBLISHED = 1; // 已发布
 	const STATUS_HIDDEN = 2; // 隐藏
 
+    protected $guarded = [
+        'id',
+    ];
+
+    protected $dates = [
+        'article_updated_at',
+    ];
+
     protected $perPage = 10;
 
 	protected $events = [
