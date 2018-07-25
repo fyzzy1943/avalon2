@@ -28,7 +28,12 @@
             <textarea class="form-control" id="abstract" name="abstract" rows="5"
                       placeholder="摘要">{{ $article->abstract }}</textarea>
           </div>
+          <div class="form-group">
+            <label for="alias">Alias</label>
+            <input type="text" class="form-control" id="alias" name="alias" placeholder="别名" value="{{ $article->alias }}">
+          </div>
         </div>
+
 
         <div class="col-md-5">
           <div class="radio-inline">
