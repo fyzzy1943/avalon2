@@ -15,6 +15,8 @@ $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );
 
+\Carbon\Carbon::setLocale('zh');
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces

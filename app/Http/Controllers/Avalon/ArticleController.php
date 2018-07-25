@@ -41,6 +41,7 @@ class ArticleController extends Controller
     {
         $article = new Article();
         $article->title = $request->input('title');
+        $article->alias = $request->input('alias');
         $article->doc_md = $request->input('editor-markdown-doc') ?? '';
         $article->doc_html = $request->input('editor-html-code') ?? '';
         $article->cover = $request->input('cover') ?? '';
@@ -83,13 +84,14 @@ class ArticleController extends Controller
 		$article = Article::findOrFail($id);
 
 	    $article->title = $request->input('title');
+        $article->alias = $request->input('alias');
 	    $article->doc_md = $request->input('editor-markdown-doc') ?? '';
 	    $article->doc_html = $request->input('editor-html-code') ?? '';
         $article->cover = $request->input('cover') ?? '';
         $article->abstract = $request->input('abstract') ?? '';
-	    $article->status = $request->input('status');
         $article->cid = $request->input('category');
         $article->article_updated_at = Carbon::now();
+        $article->status = $request->input('status');
 
 	    $article->save();
 

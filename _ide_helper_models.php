@@ -123,13 +123,21 @@ namespace App{
 
 namespace App\Models{
 /**
+ * App\Models\MercuryStat
+ *
+ */
+	class MercuryStat extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Category
  *
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $deleted_at
  * @property int $id
  * @property string $name
- * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
- * @property \Carbon\Carbon|null $deleted_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Article[] $articles
  * @method static bool|null forceDelete()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Category onlyTrashed()
@@ -147,14 +155,33 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\Token
+ *
+ * @property \Carbon\Carbon|null $created_at
+ * @property int $id
+ * @property string $token
+ * @property \Carbon\Carbon|null $updated_at
+ * @property int $user_id
+ * @property-read \App\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Token whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Token whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Token whereToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Token whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Token whereUserId($value)
+ */
+	class Token extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Tag
  *
- * @property int $id
- * @property \Carbon\Carbon|null $created_at
- * @property \Carbon\Carbon|null $updated_at
- * @property string $name
- * @property string $description
  * @property int $count
+ * @property \Carbon\Carbon|null $created_at
+ * @property string $description
+ * @property int $id
+ * @property string $name
+ * @property \Carbon\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Article[] $articles
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereCount($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereCreatedAt($value)
@@ -170,11 +197,11 @@ namespace App\Models{
 /**
  * App\Models\ArticleTag
  *
- * @property int $id
- * @property \Carbon\Carbon|null $created_at
- * @property \Carbon\Carbon|null $updated_at
  * @property int $article_id
+ * @property \Carbon\Carbon|null $created_at
+ * @property int $id
  * @property int $tag_id
+ * @property \Carbon\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ArticleTag whereArticleId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ArticleTag whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ArticleTag whereId($value)
@@ -186,19 +213,38 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\Mercury
+ *
+ * @property \Carbon\Carbon|null $created_at
+ * @property int $id
+ * @property \Carbon\Carbon|null $updated_at
+ * @property int $user_id
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Mercury whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Mercury whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Mercury whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Mercury whereUserId($value)
+ */
+	class Mercury extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Article
  *
- * @property int $id
- * @property int $uid
- * @property int $cid
- * @property string $title
- * @property string $cover
  * @property string $abstract
- * @property string $doc_md
- * @property string $doc_html
- * @property int $status 状态：0草稿1发布2隐藏
- * @property string|null $deleted_at
+ * @property string $alias
+ * @property \Carbon\Carbon $article_updated_at
+ * @property int $cid
+ * @property string $cover
  * @property \Carbon\Carbon|null $created_at
+ * @property string|null $deleted_at
+ * @property string $doc_html
+ * @property string $doc_md
+ * @property int $id
+ * @property int $page_views
+ * @property int $status 状态：0草稿1发布2隐藏
+ * @property string $title
+ * @property int $uid
  * @property \Carbon\Carbon|null $updated_at
  * @property-read \App\Models\Category $category
  * @property-read mixed $status_d
@@ -209,6 +255,8 @@ namespace App\Models{
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Article onlyTrashed()
  * @method static bool|null restore()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article whereAbstract($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article whereAlias($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article whereArticleUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article whereCid($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article whereCover($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article whereCreatedAt($value)
@@ -216,6 +264,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article whereDocHtml($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article whereDocMd($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article wherePageViews($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article whereUid($value)

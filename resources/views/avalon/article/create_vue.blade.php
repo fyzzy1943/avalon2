@@ -22,6 +22,10 @@
             <input type="text" class="form-control" id="title" name="title" placeholder="标题 REQUIRED">
           </div>
           <div class="form-group">
+            <label for="alias">Alias</label>
+            <input type="text" class="form-control" id="alias" name="alias" placeholder="别名">
+          </div>
+          <div class="form-group">
             <label for="abstract">Abstract</label>
             <textarea class="form-control" id="abstract" name="abstract" rows="5" placeholder="摘要"></textarea>
           </div>

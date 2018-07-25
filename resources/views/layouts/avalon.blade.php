@@ -33,7 +33,7 @@
         <li><a href="{{ url('archives') }}">归档</a></li>
 {{--        <li><a href="{{ url('notes') }}">笔记</a></li>--}}
         <li><a href="{{ url('friends') }}">路标</a></li>
-        <li><a href="">其它</a></li>
+        <li><a href="{{ url('article').'/about' }}">关于</a></li>
       </ul>
     </nav>
   </div>

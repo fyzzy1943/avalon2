@@ -64,7 +64,9 @@ Route::group([
 // ### WebSite ###
 
 Route::get('article', 'IndexController@article');
-Route::get('article/{id}', 'IndexController@show');
+Route::get('article/{id}', 'IndexController@show')->where('id', '\d+');
+Route::get('article/{md}', 'IndexController@showMarkDown')->where('md', '\d+\.md\b');
+Route::get('article/{alias}', 'IndexController@showByAlias');
 
 Route::get('category/{id?}', 'IndexController@category');
 

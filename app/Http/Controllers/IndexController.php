@@ -9,6 +9,7 @@ use App\Models\ArticleTag;
 use App\Models\Tag;
 use App\Note;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -67,9 +68,26 @@ class IndexController extends Controller
 
         Article::where('id', $id)->increment('page_views');
 
-        Carbon::setLocale('zh');
+//        Carbon::setLocale('zh');
 
 	    return view('article')->with('article', $article);
+    }
+
+    public function showMarkDown($md)
+    {
+        dd(substr($md, 0, -3));
+    }
+
+    public function showByAlias($alias)
+    {
+        $article = Article::where('alias', $alias)->first();
+        if (!$article) {
+            throw (new ModelNotFoundException())->setModel(Article::class);
+        }
+
+        $article->increment('page_views');
+
+        return view('article')->with('article', $article);
     }
 
     /**
