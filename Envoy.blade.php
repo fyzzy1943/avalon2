@@ -19,8 +19,7 @@
 
 @task('composer')
     cd app/avalon2
-    composer install
-    composer dumpautoload
+    composer install --no-dev --optimize-autoloader
 @endtask
 
 @story('deploy', ['on' => 'web'])
@@ -29,4 +28,3 @@
     cache
     composer
 @endstory
-
