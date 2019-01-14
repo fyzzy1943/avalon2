@@ -6,6 +6,6 @@
   <div class="clearfix"></div>
   <div>
     <p>Copyright &copy; 2011-{{ date('Y', time()) }} fordawn.com All Rights Reserved.</p>
-    <p style="float: right"><a href="{{ url('avalon') }}"><i class="fa fa-terminal"></i></a></p>
+    <p><a href="{{ url('avalon') }}"><i class="fa fa-terminal"></i></a></p>
   </div>
 </footer>
