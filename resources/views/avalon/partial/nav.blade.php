@@ -50,6 +50,15 @@
               <li><a href="#">One more separated link</a></li>
             </ul>
           </li>
+
+          <li class="@if(Request::is('avalon/picture*'))active @endif dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+               aria-expanded="false">图床 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ route('pic_list') }}">列表</a></li>
+              <li><a href="{{ route('pic_create') }}">上传</a></li>
+            </ul>
+          </li>
         </ul>
 
         <form class="navbar-form navbar-left">

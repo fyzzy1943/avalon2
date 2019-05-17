@@ -57,11 +57,18 @@ Route::group([
 		Route::post('sign', 'SystemController@signCreate');
 	});
 
+	Route::get('pics', 'Files\PicsController@list')->name('pic_list');
+	Route::get('pic/upload', 'Files\PicsController@create')->name('pic_create');
+	Route::post('pic', 'Files\PicsController@store')->name('pic_store');
+
     // Upload
     Route::post('upload/img/{name}', 'UploadController@img');
 });
 
 // ### WebSite ###
+
+
+Route::get('orz/{date}/{name}', 'Misc\FileController@view');
 
 Route::get('article', 'IndexController@article');
 Route::get('article/{id}', 'IndexController@show')->where('id', '\d+');
